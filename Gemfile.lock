@@ -3,10 +3,17 @@ GEM
   specs:
     ast (2.4.2)
     base64 (0.1.1)
+    httparty (0.21.0)
+      mini_mime (>= 1.0.0)
+      multi_xml (>= 0.5.2)
     json (2.6.3)
     kwalify (0.7.2)
     language_server-protocol (3.17.0.3)
     lint_roller (1.1.0)
+    mini_mime (1.1.5)
+    multi_xml (0.6.0)
+    nokogiri (1.15.4-x86_64-linux)
+      racc (~> 1.4)
     parallel (1.23.0)
     parser (3.2.2.3)
       ast (~> 2.4.1)
@@ -60,6 +67,8 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  httparty (~> 0.21.0)
+  nokogiri (~> 1.15, >= 1.15.4)
   rdoc (~> 6.5)
   reek (~> 6.1, >= 6.1.4)
   standard (~> 1.31, >= 1.31.1)
