@@ -9,3 +9,6 @@
 
 StringLiterals:
   Enabled: false
+
+SpaceInsideHashLiteralBraces:
+  Enabled: false
