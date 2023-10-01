@@ -20,6 +20,7 @@ module IMDb
       @document.css("h1").text
     end
 
+    # returns a unique id set by imdb
     def imdb_id
       @document.css("meta[property*=pageConst]").attribute("content").value
     end
@@ -76,7 +77,11 @@ module IMDb
 
     # returns list of directors of the movie
     def directors
-      split_these @document.css("li[data-testid=title-pc-principal-credit] ul").first.text
+      html = @document.css("li[data-testid=title-pc-principal-credit]")
+      text = html.text
+      return unless text.include? "Director"
+
+      split_these html.css("ul").first.text
     end
 
     private
@@ -123,9 +128,11 @@ end
 # animal = IMDb::Movie.new("https://www.imdb.com/title/tt13751694/") # will release movie
 # justice = IMDb::Movie.new("https://www.imdb.com/title/tt4121026") # movie with no release date
 # planet_earth = IMDb::Movie.new("https://www.imdb.com/title/tt5491994/") # TV Series
-episode2 = IMDb::Movie.new("https://www.imdb.com/title/tt4351260/") # Episode w/o rating
+episode1 = IMDb::Movie.new("https://www.imdb.com/title/tt6142646/") # Episode w rating
+# episode2 = IMDb::Movie.new("https://www.imdb.com/title/tt4351260/") # Episode w/o rating
+# game = IMDb::Movie.new("https://www.imdb.com/title/tt6161168/")
 
-p episode2.ratings
+p episode1.directors
 
 # SHOULD NOT WORK
 # p IMDb::Movie.new("https://www.imdb.com/title/tt0111161590/")    # should not work
