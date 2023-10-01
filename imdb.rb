@@ -2,6 +2,7 @@
 
 require "nokogiri"
 require "httparty"
+require_relative "imdb_error"
 
 module IMDb
   # Extracts all metadata of a Movie (URL passed as first argument) from IMDb website
@@ -9,9 +10,9 @@ module IMDb
     attr_reader :url
 
     def initialize(url)
+      raise InvalidURL, "Please input a valid IMDb URL" unless valid?(url)
+
       @url = url
-      response = HTTParty.get(@url, options)
-      @document = Nokogiri::HTML(response.body)
     end
 
     # returns title of the movie
@@ -80,6 +81,16 @@ module IMDb
 
     private
 
+    def correct_id?(url)
+      response = HTTParty.get(url, options)
+      @document = Nokogiri::HTML(response.body)
+      @document.title != "404 Error - IMDb"
+    end
+
+    def imdb?(url)
+      url.match?("https://www.imdb.com/title/tt#{/\d+{7,}/}")
+    end
+
     def inspect_this(input)
       input.empty? ? nil : input
     end
@@ -89,7 +100,7 @@ module IMDb
     end
 
     def split_these(names)
-      list = names.split(/(?<=\p{Ll})(?=\p{Lu})/)
+      list = names.split(/(?<=[a-z)])(?=[A-Z])/)
       if list.empty?
         nil
       elsif list.length == 1
@@ -98,13 +109,23 @@ module IMDb
         list
       end
     end
+
+    def valid?(url)
+      imdb?(url) && correct_id?(url)
+    end
   end
 end
 
+# # WORKS
 # charlie = IMDb::Movie.new("https://www.imdb.com/title/tt7466810/")    # movie
 # godfather = IMDb::Movie.new("https://www.imdb.com/title/tt0068646/") # movie
 # spider_man = IMDb::Movie.new("https://www.imdb.com/title/tt9362722/") # movie has multiple directors
 # animal = IMDb::Movie.new("https://www.imdb.com/title/tt13751694/") # will release movie
-justice = IMDb::Movie.new("https://www.imdb.com/title/tt4121026") # movie with no release date
-p justice.release_date
-# IMDb::Movie.new("https://www.imdb.com/title/tt0111161590/")    # should not work
+# justice = IMDb::Movie.new("https://www.imdb.com/title/tt4121026") # movie with no release date
+# planet_earth = IMDb::Movie.new("https://www.imdb.com/title/tt5491994/") # TV Series
+episode2 = IMDb::Movie.new("https://www.imdb.com/title/tt4351260/") # Episode w/o rating
+
+p episode2.ratings
+
+# SHOULD NOT WORK
+# p IMDb::Movie.new("https://www.imdb.com/title/tt0111161590/")    # should not work
