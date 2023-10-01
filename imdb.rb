@@ -93,7 +93,7 @@ module IMDb
     end
 
     def imdb?(url)
-      url.match?("https://www.imdb.com/title/tt#{/\d+{7,}/}")
+      url.match?("https://www.imdb.com/title/tt#{/\d+{7,}/i}")
     end
 
     def inspect_this(input)
