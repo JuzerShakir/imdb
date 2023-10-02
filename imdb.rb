@@ -35,9 +35,7 @@ module IMDb
     def initialize(url)
       raise InvalidURL, "Please input a valid IMDb URL" unless valid?(url)
 
-      type = document.css("meta[property*=type]").attribute("content").value
-
-      case type
+      case title_type
       when "video.movie" then extend Movie
       when "video.tv_show" then extend TvShow
       when "video.episode" then extend Episode
@@ -138,9 +136,9 @@ module IMDb
       inspect_this(list)
     end
 
-    # checks if the url is of correct type
-    def is_a?(type)
-      document.css("meta[property*=type]").attribute("content").value.include? type
+    # returns type of title
+    def title_type
+      document.css("meta[property*=type]").attribute("content").value
     end
 
     # validates domain name, slug & IMDb ID length and returns title page
