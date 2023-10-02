@@ -5,28 +5,24 @@ require "httparty"
 require_relative "imdb_error"
 
 module IMDb
-  # Extracts common data from titles (Movie, Series, Episode, Game) from imdb.com
+  # Extracts common data from titles (Movie, TV-shows, Episode, Game) from imdb.com
   class Base
-    # remove_method :new
-
-    # pass valid imdb title url (Movie, Series, Episode, Game)
+    # pass valid imdb title url (Movie, TV-shows, Episode, Game)
     def initialize(url)
       raise InvalidURL, "Please input a valid IMDb URL" unless valid?(url)
     end
-
-    # TODO: create a function that extracts url from meta tags
 
     # returns budget price of the movie or nil if not available
     def budget
       @document.css("li[data-testid=title-boxoffice-budget] div").text[/\$\S+/]
     end
 
-    # returns list of top n casts of the movie
+    # returns list of casts
     def casts
       split_these @document.css("a[data-testid=title-cast-item__actor]").text
     end
 
-    # returns list of directors of the movie
+    # returns list of directors
     def directors
       html = @document.css("li[data-testid=title-pc-principal-credit]")
       text = html.text
@@ -35,12 +31,12 @@ module IMDb
       split_these html.css("ul").first.text
     end
 
-    # returns duration of the movie
+    # returns duration
     def duration
       inspect_this @document.css("li[data-testid=title-techspec_runtime] div").text
     end
 
-    # returns list of genres of the movie
+    # returns list of genres
     def genres
       split_these @document.css("div[data-testid=genres]").text
     end
@@ -50,37 +46,37 @@ module IMDb
       @document.css("meta[property*=pageConst]").attribute("content").value
     end
 
-    # returns title of the movie
+    # returns title
     def title
       @document.css("h1").text
     end
 
-    # returns popularity of the movie or nil if not available
+    # returns popularity or nil if not available
     def popularity
       @document.css("div[data-testid=hero-rating-bar__aggregate-rating] span div").last&.text
     end
 
-    # returns list of producers of the movie
+    # returns list of producers
     def producers
       split_these @document.css("li[data-testid=title-details-companies] li").text
     end
 
-    # returns ratings of the movie or nil if not available
+    # returns ratings or nil if not available
     def ratings
       @document.css("div[data-testid=hero-rating-bar__aggregate-rating__score] span").first&.text
     end
 
-    # returns release date of the movie
+    # returns release date
     def release_date
       inspect_this @document.css("li[data-testid=title-details-releasedate] div").text
     end
 
-    # returns revenue of the movie
+    # returns revenue
     def revenue
       inspect_this @document.css("li[data-testid=title-boxoffice-cumulativeworldwidegross] div").text
     end
 
-    # returns tagline of the movie
+    # returns tagline
     def tagline
       @document.css("span[data-testid=plot-xl]").text
     end
