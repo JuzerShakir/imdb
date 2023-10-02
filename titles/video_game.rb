@@ -21,6 +21,6 @@ end
 # p game.ratings
 # p game.popularity
 # p game.genres
-# p game.producers
+# p game.production_companies
 # p game.directors
 # p game.casts

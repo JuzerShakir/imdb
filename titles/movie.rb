@@ -36,7 +36,7 @@ end
 # p charlie.genres
 # p charlie.revenue
 # p charlie.budget
-# p charlie.producers
+# p charlie.production_companies
 # p charlie.directors
 # p charlie.casts
 # p charlie.duration

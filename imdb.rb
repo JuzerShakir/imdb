@@ -51,8 +51,8 @@ module IMDb
       @document.css("div[data-testid=hero-rating-bar__aggregate-rating] span div").last&.text
     end
 
-    # returns list of producers
-    def producers
+    # returns list of production companies
+    def production_companies
       split_these @document.css("li[data-testid=title-details-companies] li").text
     end
 

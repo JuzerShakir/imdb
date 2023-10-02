@@ -19,7 +19,7 @@ end
 # p planet_earth.ratings
 # p planet_earth.popularity
 # p planet_earth.genres
-# p planet_earth.producers
+# p planet_earth.production_companies
 # p planet_earth.directors
 # p planet_earth.casts
 # p planet_earth.duration
