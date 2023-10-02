@@ -9,3 +9,5 @@ class MovieTypeError < InvalidURL; end
 class TvShowTypeError < InvalidURL; end
 
 class EpisodeTypeError < InvalidURL; end
+
+class VideoGameTypeError < InvalidURL; end

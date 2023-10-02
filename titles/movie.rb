@@ -22,7 +22,6 @@ end
 # spider_man = Movie.new("https://www.imdb.com/title/tt9362722/") # movie has multiple directors
 # animal = Movie.new("https://www.imdb.com/title/tt13751694/") # will release movie
 # justice = Movie.new("https://www.imdb.com/title/tt4121026") # movie with no release date
-# game = Movie.new("https://www.imdb.com/title/tt6161168/") # game
 
 # p charlie.url
 # p charlie.title
