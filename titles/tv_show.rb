@@ -17,8 +17,6 @@ class TvShow < IMDb::Base
 end
 
 # planet_earth = TvShow.new("https://www.imdb.com/title/tt5491994/") # TV Series
-# episode1 = TvShow.new("https://www.imdb.com/title/tt6142646/") # Episode w rating
-# episode2 = TvShow.new("https://www.imdb.com/title/tt4351260/") # Episode w/o rating
 
 # p planet_earth.url
 # p planet_earth.title

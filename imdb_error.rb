@@ -7,3 +7,5 @@ class InvalidURL < ImdbError; end
 class MovieTypeError < InvalidURL; end
 
 class TvShowTypeError < InvalidURL; end
+
+class EpisodeTypeError < InvalidURL; end
