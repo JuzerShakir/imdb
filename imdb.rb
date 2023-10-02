@@ -5,10 +5,11 @@ require "httparty"
 require_relative "imdb_error"
 
 module IMDb
-  # Extracts all metadata of a Movie (URL passed as first argument) from IMDb website
-  class Movie
+  # Extracts common data from titles (Movie, Series, Episode, Game) from imdb.com
+  class Base
     attr_reader :url
 
+    # pass valid imdb title url (Movie, Series, Episode, Game)
     def initialize(url)
       raise InvalidURL, "Please input a valid IMDb URL" unless valid?(url)
 
@@ -120,19 +121,3 @@ module IMDb
     end
   end
 end
-
-# # WORKS
-# charlie = IMDb::Movie.new("https://www.imdb.com/title/tt7466810/")    # movie
-# godfather = IMDb::Movie.new("https://www.imdb.com/title/tt0068646/") # movie
-# spider_man = IMDb::Movie.new("https://www.imdb.com/title/tt9362722/") # movie has multiple directors
-# animal = IMDb::Movie.new("https://www.imdb.com/title/tt13751694/") # will release movie
-# justice = IMDb::Movie.new("https://www.imdb.com/title/tt4121026") # movie with no release date
-# planet_earth = IMDb::Movie.new("https://www.imdb.com/title/tt5491994/") # TV Series
-episode1 = IMDb::Movie.new("https://www.imdb.com/title/tt6142646/") # Episode w rating
-# episode2 = IMDb::Movie.new("https://www.imdb.com/title/tt4351260/") # Episode w/o rating
-# game = IMDb::Movie.new("https://www.imdb.com/title/tt6161168/")
-
-p episode1.directors
-
-# SHOULD NOT WORK
-# p IMDb::Movie.new("https://www.imdb.com/title/tt0111161590/")    # should not work
