@@ -4,6 +4,8 @@ require_relative "../imdb"
 
 # Get all Video Game data by initializing fron this class
 class VideoGame < IMDb::Base
+  undef_method :duration
+
   def initialize(url)
     super
     raise VideoGameTypeError, "#{url} is not a valid IMDb Video-Game URL" unless is_a? "other"
@@ -19,9 +21,6 @@ end
 # p game.ratings
 # p game.popularity
 # p game.genres
-# p game.revenue
-# p game.budget
 # p game.producers
 # p game.directors
 # p game.casts
-# p game.duration

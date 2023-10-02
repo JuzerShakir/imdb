@@ -19,8 +19,6 @@ end
 # p planet_earth.ratings
 # p planet_earth.popularity
 # p planet_earth.genres
-# p planet_earth.revenue
-# p planet_earth.budget
 # p planet_earth.producers
 # p planet_earth.directors
 # p planet_earth.casts

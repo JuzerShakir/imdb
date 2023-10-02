@@ -12,11 +12,6 @@ module IMDb
       raise InvalidURL, "Please input a valid IMDb URL" unless valid?(url)
     end
 
-    # returns budget price of the movie or nil if not available
-    def budget
-      @document.css("li[data-testid=title-boxoffice-budget] div").text[/\$\S+/]
-    end
-
     # returns list of casts
     def casts
       split_these @document.css("a[data-testid=title-cast-item__actor]").text
@@ -69,11 +64,6 @@ module IMDb
     # returns release date
     def release_date
       inspect_this @document.css("li[data-testid=title-details-releasedate] div").text
-    end
-
-    # returns revenue
-    def revenue
-      inspect_this @document.css("li[data-testid=title-boxoffice-cumulativeworldwidegross] div").text
     end
 
     # returns tagline

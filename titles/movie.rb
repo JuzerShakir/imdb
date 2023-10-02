@@ -8,6 +8,16 @@ class Movie < IMDb::Base
     super
     raise MovieTypeError, "#{url} is not a valid IMDb Movie URL" unless is_a? "movie"
   end
+
+  # returns budget price of the movie or nil if not available
+  def budget
+    @document.css("li[data-testid=title-boxoffice-budget] div").text[/\$\S+/]
+  end
+
+  # returns revenue
+  def revenue
+    inspect_this @document.css("li[data-testid=title-boxoffice-cumulativeworldwidegross] div").text
+  end
 end
 
 # # WORKS

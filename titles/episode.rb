@@ -20,8 +20,6 @@ end
 # p episode1.ratings
 # p episode1.popularity
 # p episode1.genres
-# p episode1.revenue
-# p episode1.budget
 # p episode1.producers
 # p episode1.directors
 # p episode1.casts
