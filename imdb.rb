@@ -35,7 +35,7 @@ module IMDb
       split_these html.css("ul").first.text
     end
 
-    # return duration of the movie
+    # returns duration of the movie
     def duration
       inspect_this @document.css("li[data-testid=title-techspec_runtime] div").text
     end
@@ -91,35 +91,41 @@ module IMDb
 
     private
 
+    # checks IMDb id from URL (dosen't return 404 Error Page)
     def correct_id?(url)
       response = HTTParty.get(url, options)
       @document = Nokogiri::HTML(response.body)
       @document.title != "404 Error - IMDb"
     end
 
+    # checks domain name, slug & IMDb id of 7 digits min
     def imdb?(url)
       url.match?("https://www.imdb.com/title/tt#{/\d+{7,}/i}")
     end
 
+    # returns proper output
     def inspect_this(input)
-      input.empty? ? nil : input
+      if input.empty?
+        nil
+      elsif input.length == 1
+        input.join
+      else
+        input
+      end
     end
 
+    # provide headers to Httparty gem
     def options
       {headers: {"User-Agent" => "Httparty"}}
     end
 
+    # spilits camel case names to array
     def split_these(names)
       list = names.split(/(?<=[a-z)])(?=[A-Z])/)
-      if list.empty?
-        nil
-      elsif list.length == 1
-        list.join
-      else
-        list
-      end
+      inspect_this(list)
     end
 
+    # checks if the url is of correct type
     def is_a?(type)
       @document.css("meta[property*=type]").attribute("content").value.include? type
     end
