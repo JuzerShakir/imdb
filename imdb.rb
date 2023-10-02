@@ -26,9 +26,9 @@ require_relative "imdb_error"
 ##
 
 module IMDb
-  # Extracts common data from titles (Movie, TV-shows, Episode, Game) from imdb.com
+  # Extracts common data from titles - Movie, TV-shows, Episode, Game from imdb.com
   class Base
-    # pass valid imdb title url (Movie, TV-shows, Episode, Game)
+    # pass valid imdb title url
     def initialize(url)
       raise InvalidURL, "Please input a valid IMDb URL" unless valid?(url)
     end
@@ -47,7 +47,7 @@ module IMDb
       split_these html.css("ul").first.text
     end
 
-    # returns duration
+    # returns runtime of the title
     def duration
       inspect_this document.css("li[data-testid=title-techspec_runtime] div").text
     end
@@ -62,12 +62,12 @@ module IMDb
       document.css("meta[property*=pageConst]").attribute("content").value
     end
 
-    # returns title
+    # returns name of the title
     def title
       document.css("h1").text
     end
 
-    # returns popularity or nil if not available
+    # returns number of users rated or nil if not available
     def popularity
       document.css("div[data-testid=hero-rating-bar__aggregate-rating] span div").last&.text
     end
@@ -77,7 +77,7 @@ module IMDb
       split_these document.css("li[data-testid=title-details-companies] li").text
     end
 
-    # returns ratings or nil if not available
+    # returns user average rating score or nil if not available
     def ratings
       document.css("div[data-testid=hero-rating-bar__aggregate-rating__score] span").first&.text
     end
@@ -87,7 +87,7 @@ module IMDb
       inspect_this document.css("li[data-testid=title-details-releasedate] div").text
     end
 
-    # returns tagline
+    # returns short introduction of the title
     def tagline
       document.css("span[data-testid=plot-xl]").text
     end
