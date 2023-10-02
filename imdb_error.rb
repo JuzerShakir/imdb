@@ -3,3 +3,5 @@
 class ImdbError < StandardError; end
 
 class InvalidURL < ImdbError; end
+
+class MovieTypeError < InvalidURL; end

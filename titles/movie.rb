@@ -2,11 +2,22 @@
 
 require_relative "../imdb"
 
+# Get all movie data by initializing fron this class
 class Movie < IMDb::Base
+  def initialize(url)
+    super
+    raise MovieTypeError, "#{url} is not a valid IMDb Movie URL" unless movie?
+  end
+
+  private
+
+  def movie?
+    @document.css("meta[property*=type]").attribute("content").value.include? "movie"
+  end
 end
 
 # # WORKS
-charlie = IMDb::Base.new("https://www.imdb.com/title/tt7466810/") # movie
+charlie = Movie.new("https://www.imdb.com/title/tt7466810/") # movie
 # godfather = Movie.new("https://www.imdb.com/title/tt0068646/") # movie
 # spider_man = Movie.new("https://www.imdb.com/title/tt9362722/") # movie has multiple directors
 # animal = Movie.new("https://www.imdb.com/title/tt13751694/") # will release movie
@@ -14,7 +25,7 @@ charlie = IMDb::Base.new("https://www.imdb.com/title/tt7466810/") # movie
 # planet_earth = Movie.new("https://www.imdb.com/title/tt5491994/") # TV Series
 # episode1 = Movie.new("https://www.imdb.com/title/tt6142646/") # Episode w rating
 # episode2 = Movie.new("https://www.imdb.com/title/tt4351260/") # Episode w/o rating
-# game = Movie.new("https://www.imdb.com/title/tt6161168/")
+# game = Movie.new("https://www.imdb.com/title/tt6161168/") # game
 
 p charlie.title
 # p charlie.imdb_id

@@ -9,14 +9,14 @@ module IMDb
   class Base
     attr_reader :url
 
-    remove_method :new
+    # remove_method :new
 
     # pass valid imdb title url (Movie, Series, Episode, Game)
     def initialize(url)
       raise InvalidURL, "Please input a valid IMDb URL" unless valid?(url)
-
-      @url = url
     end
+
+    # TODO: create a function that extracts url from meta tags
 
     # returns budget price of the movie or nil if not available
     def budget
