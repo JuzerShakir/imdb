@@ -11,3 +11,5 @@ gem "rdoc", "~> 6.5"
 gem "httparty", "~> 0.21.0"
 
 gem "nokogiri", "~> 1.15", ">= 1.15.4"
+
+gem "require_all", "~> 3.0"
