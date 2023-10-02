@@ -30,7 +30,7 @@ require_all "titles/*.rb"
 # :reek:TooManyMethods
 module IMDb
   # Extracts common data from titles - Movie, TV-shows, Episode, Game from imdb.com
-  class Base
+  class Title
     # pass valid imdb title url
     def initialize(url)
       raise InvalidURL, "Please input a valid IMDb URL" unless valid?(url)
