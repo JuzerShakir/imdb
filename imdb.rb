@@ -9,6 +9,8 @@ module IMDb
   class Base
     attr_reader :url
 
+    remove_method :new
+
     # pass valid imdb title url (Movie, Series, Episode, Game)
     def initialize(url)
       raise InvalidURL, "Please input a valid IMDb URL" unless valid?(url)
