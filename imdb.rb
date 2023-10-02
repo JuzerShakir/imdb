@@ -25,6 +25,7 @@ require_relative "imdb_error"
 ##
 ##
 
+# :reek:TooManyMethods
 module IMDb
   # Extracts common data from titles - Movie, TV-shows, Episode, Game from imdb.com
   class Base
@@ -67,7 +68,7 @@ module IMDb
       document.css("h1").text
     end
 
-    # returns number of users rated or nil if not available
+    # returns number of users rated
     def popularity
       document.css("div[data-testid=hero-rating-bar__aggregate-rating] span div").last&.text
     end
@@ -77,7 +78,7 @@ module IMDb
       split_these document.css("li[data-testid=title-details-companies] li").text
     end
 
-    # returns user average rating score or nil if not available
+    # returns user average rating score
     def ratings
       document.css("div[data-testid=hero-rating-bar__aggregate-rating__score] span").first&.text
     end
@@ -89,7 +90,7 @@ module IMDb
 
     # returns short introduction of the title
     def tagline
-      document.css("span[data-testid=plot-xl]").text
+      inspect_this document.css("span[data-testid=plot-xl]").text
     end
 
     def url
@@ -102,16 +103,12 @@ module IMDb
 
     # checks IMDb id from URL (dosen't return 404 Error Page)
     def correct_id?(url)
-      response = HTTParty.get(url, options)
+      response = HTTParty.get(url, {headers: {"User-Agent" => "Httparty"}})
       @document = Nokogiri::HTML(response.body)
       document.title != "404 Error - IMDb"
     end
 
-    # checks domain name, slug & IMDb id of 7 digits min
-    def imdb?(url)
-      url.match?("https://www.imdb.com/title/tt#{/\d+{7,}/i}")
-    end
-
+    # :reek:UtilityFunction
     # returns proper output
     def inspect_this(input)
       if input.empty?
@@ -121,11 +118,6 @@ module IMDb
       else
         input
       end
-    end
-
-    # provide headers to Httparty gem
-    def options
-      {headers: {"User-Agent" => "Httparty"}}
     end
 
     # spilits camel case names to array
@@ -139,8 +131,9 @@ module IMDb
       document.css("meta[property*=type]").attribute("content").value.include? type
     end
 
+    # validates domain name, slug & IMDb ID length and returns title page
     def valid?(url)
-      imdb?(url) && correct_id?(url)
+      url.match?("https://www.imdb.com/title/tt#{/\d+{7,}/i}") && correct_id?(url)
     end
   end
 end
