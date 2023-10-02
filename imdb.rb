@@ -4,6 +4,27 @@ require "nokogiri"
 require "httparty"
 require_relative "imdb_error"
 
+##
+##
+##
+###### ---------------- List of features/data avialable to extract -----------------------
+###   1. Cast
+###   2. Director
+###   3. Genres
+###   4. IMDb ID
+###   5. Popularity
+###   6. Ratings
+###   7. Title
+###   8. Tagline
+#### ------- DETAILS ---------
+###   9. Prodcution Companies
+###   10. Release Date
+#### ------- TECHNICAL SPECS ---------
+###   11. Runtime
+##
+##
+##
+
 module IMDb
   # Extracts common data from titles (Movie, TV-shows, Episode, Game) from imdb.com
   class Base

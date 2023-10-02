@@ -2,6 +2,19 @@
 
 require_relative "../imdb"
 
+##
+##
+##
+###### ---------------- List of features/data avialable to extract -----------------------
+###    All features are available from Base class
+
+#### ------- BOX OFFICE ---------
+###   12. Budget
+###   13. Gross Worldwide (Revenue)
+##
+##
+##
+
 # Get all movie data by initializing fron this class
 class Movie < IMDb::Base
   def initialize(url)

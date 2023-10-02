@@ -2,6 +2,16 @@
 
 require_relative "../imdb"
 
+##
+##
+##
+###### ---------------- List of features/data avialable to extract -----------------------
+###    All features are available from Base class
+
+##
+##
+##
+
 # Get all TV-show data by initializing fron this class
 class TvShow < IMDb::Base
   def initialize(url)
@@ -10,7 +20,7 @@ class TvShow < IMDb::Base
   end
 end
 
-# planet_earth = TvShow.new("https://www.imdb.com/title/tt5491994/") # TV TV-shows
+# planet_earth = TvShow.new("https://www.imdb.com/title/tt5491994/") # TV-shows
 
 # p planet_earth.url
 # p planet_earth.title

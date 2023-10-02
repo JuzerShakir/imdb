@@ -2,6 +2,16 @@
 
 require_relative "../imdb"
 
+##
+##
+##
+###### ---------------- List of features/data avialable to extract -----------------------
+###    All features are available from Base class
+
+##
+##
+##
+
 # Get all Video Game data by initializing fron this class
 class VideoGame < IMDb::Base
   undef_method :duration
