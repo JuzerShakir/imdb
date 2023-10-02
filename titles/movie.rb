@@ -6,13 +6,7 @@ require_relative "../imdb"
 class Movie < IMDb::Base
   def initialize(url)
     super
-    raise MovieTypeError, "#{url} is not a valid IMDb Movie URL" unless movie?
-  end
-
-  private
-
-  def movie?
-    @document.css("meta[property*=type]").attribute("content").value.include? "movie"
+    raise MovieTypeError, "#{url} is not a valid IMDb Movie URL" unless is_a? "movie"
   end
 end
 

@@ -6,13 +6,7 @@ require_relative "../imdb"
 class TvShow < IMDb::Base
   def initialize(url)
     super
-    raise TvShowTypeError, "#{url} is not a valid IMDb TV-show URL" unless tv_show?
-  end
-
-  private
-
-  def tv_show?
-    @document.css("meta[property*=type]").attribute("content").value.include? "tv_show"
+    raise TvShowTypeError, "#{url} is not a valid IMDb TV-show URL" unless is_a? "tv_show"
   end
 end
 

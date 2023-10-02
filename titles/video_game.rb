@@ -6,13 +6,7 @@ require_relative "../imdb"
 class VideoGame < IMDb::Base
   def initialize(url)
     super
-    raise VideoGameTypeError, "#{url} is not a valid IMDb Video-Game URL" unless video_game?
-  end
-
-  private
-
-  def video_game?
-    @document.css("meta[property*=type]").attribute("content").value.include? "other"
+    raise VideoGameTypeError, "#{url} is not a valid IMDb Video-Game URL" unless is_a? "other"
   end
 end
 

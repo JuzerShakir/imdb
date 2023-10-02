@@ -120,6 +120,10 @@ module IMDb
       end
     end
 
+    def is_a?(type)
+      @document.css("meta[property*=type]").attribute("content").value.include? type
+    end
+
     def valid?(url)
       imdb?(url) && correct_id?(url)
     end
