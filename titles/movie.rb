@@ -27,7 +27,7 @@ charlie = Movie.new("https://www.imdb.com/title/tt7466810/") # movie
 # episode2 = Movie.new("https://www.imdb.com/title/tt4351260/") # Episode w/o rating
 # game = Movie.new("https://www.imdb.com/title/tt6161168/") # game
 
-p charlie.title
+p charlie.url
 # p charlie.imdb_id
 # p charlie.tagline
 # p charlie.ratings

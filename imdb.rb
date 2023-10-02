@@ -7,8 +7,6 @@ require_relative "imdb_error"
 module IMDb
   # Extracts common data from titles (Movie, Series, Episode, Game) from imdb.com
   class Base
-    attr_reader :url
-
     # remove_method :new
 
     # pass valid imdb title url (Movie, Series, Episode, Game)
@@ -85,6 +83,10 @@ module IMDb
     # returns tagline of the movie
     def tagline
       @document.css("span[data-testid=plot-xl]").text
+    end
+
+    def url
+      @document.css("meta[property*=url]").attribute("content").value
     end
 
     private
