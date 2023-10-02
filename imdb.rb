@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
+require "require_all"
 require "nokogiri"
 require "httparty"
 require_relative "imdb_error"
+require_all "titles/*.rb"
 
 ##
 ##
@@ -32,6 +34,16 @@ module IMDb
     # pass valid imdb title url
     def initialize(url)
       raise InvalidURL, "Please input a valid IMDb URL" unless valid?(url)
+
+      type = document.css("meta[property*=type]").attribute("content").value
+
+      case type
+      when "video.movie" then extend Movie
+      when "video.tv_show" then extend TvShow
+      when "video.episode" then extend Episode
+      when "video.other" then extend VideoGame
+      else raise UnSupportedTypeError, "Unknown title type"
+      end
     end
 
     # returns list of casts
