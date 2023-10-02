@@ -24,18 +24,18 @@ class Movie < IMDb::Base
 
   # returns budget price of the movie or nil if not available
   def budget
-    @document.css("li[data-testid=title-boxoffice-budget] div").text[/\$\S+/]
+    document.css("li[data-testid=title-boxoffice-budget] div").text[/\$\S+/]
   end
 
   # returns revenue
   def revenue
-    inspect_this @document.css("li[data-testid=title-boxoffice-cumulativeworldwidegross] div").text
+    inspect_this document.css("li[data-testid=title-boxoffice-cumulativeworldwidegross] div").text
   end
 end
 
 # # WORKS
 # charlie = Movie.new("https://www.imdb.com/title/tt7466810/") # movie
-# godfather = Movie.new("https://www.imdb.com/title/tt0068646/") # movie
+godfather = Movie.new("https://www.imdb.com/title/tt0068646/") # movie
 # spider_man = Movie.new("https://www.imdb.com/title/tt9362722/") # movie has multiple directors
 # animal = Movie.new("https://www.imdb.com/title/tt13751694/") # will release movie
 # justice = Movie.new("https://www.imdb.com/title/tt4121026") # movie with no release date
@@ -43,7 +43,7 @@ end
 # p charlie.url
 # p charlie.title
 # p charlie.imdb_id
-# p charlie.tagline
+p godfather.tagline
 # p charlie.ratings
 # p charlie.popularity
 # p charlie.genres

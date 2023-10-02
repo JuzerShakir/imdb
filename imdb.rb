@@ -35,12 +35,12 @@ module IMDb
 
     # returns list of casts
     def casts
-      split_these @document.css("a[data-testid=title-cast-item__actor]").text
+      split_these document.css("a[data-testid=title-cast-item__actor]").text
     end
 
     # returns list of directors
     def directors
-      html = @document.css("li[data-testid=title-pc-principal-credit]")
+      html = document.css("li[data-testid=title-pc-principal-credit]")
       text = html.text
       return unless text.include? "Director"
 
@@ -49,60 +49,62 @@ module IMDb
 
     # returns duration
     def duration
-      inspect_this @document.css("li[data-testid=title-techspec_runtime] div").text
+      inspect_this document.css("li[data-testid=title-techspec_runtime] div").text
     end
 
     # returns list of genres
     def genres
-      split_these @document.css("div[data-testid=genres]").text
+      split_these document.css("div[data-testid=genres]").text
     end
 
     # returns a unique id set by imdb
     def imdb_id
-      @document.css("meta[property*=pageConst]").attribute("content").value
+      document.css("meta[property*=pageConst]").attribute("content").value
     end
 
     # returns title
     def title
-      @document.css("h1").text
+      document.css("h1").text
     end
 
     # returns popularity or nil if not available
     def popularity
-      @document.css("div[data-testid=hero-rating-bar__aggregate-rating] span div").last&.text
+      document.css("div[data-testid=hero-rating-bar__aggregate-rating] span div").last&.text
     end
 
     # returns list of production companies
     def production_companies
-      split_these @document.css("li[data-testid=title-details-companies] li").text
+      split_these document.css("li[data-testid=title-details-companies] li").text
     end
 
     # returns ratings or nil if not available
     def ratings
-      @document.css("div[data-testid=hero-rating-bar__aggregate-rating__score] span").first&.text
+      document.css("div[data-testid=hero-rating-bar__aggregate-rating__score] span").first&.text
     end
 
     # returns release date
     def release_date
-      inspect_this @document.css("li[data-testid=title-details-releasedate] div").text
+      inspect_this document.css("li[data-testid=title-details-releasedate] div").text
     end
 
     # returns tagline
     def tagline
-      @document.css("span[data-testid=plot-xl]").text
+      document.css("span[data-testid=plot-xl]").text
     end
 
     def url
-      @document.css("meta[property*=url]").attribute("content").value
+      document.css("meta[property*=url]").attribute("content").value
     end
 
     private
+
+    attr_reader :document
 
     # checks IMDb id from URL (dosen't return 404 Error Page)
     def correct_id?(url)
       response = HTTParty.get(url, options)
       @document = Nokogiri::HTML(response.body)
-      @document.title != "404 Error - IMDb"
+      document.title != "404 Error - IMDb"
     end
 
     # checks domain name, slug & IMDb id of 7 digits min
@@ -134,7 +136,7 @@ module IMDb
 
     # checks if the url is of correct type
     def is_a?(type)
-      @document.css("meta[property*=type]").attribute("content").value.include? type
+      document.css("meta[property*=type]").attribute("content").value.include? type
     end
 
     def valid?(url)
