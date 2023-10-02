@@ -73,11 +73,6 @@ module IMDb
       document.css("meta[property*=pageConst]").attribute("content").value
     end
 
-    # returns name of the title
-    def title
-      document.css("h1").text
-    end
-
     # returns number of users rated
     def popularity
       document.css("div[data-testid=hero-rating-bar__aggregate-rating] span div").last&.text
@@ -101,6 +96,11 @@ module IMDb
     # returns short introduction of the title
     def tagline
       inspect_this document.css("span[data-testid=plot-xl]").text
+    end
+
+    # returns name of the title
+    def title
+      document.css("h1").text
     end
 
     def url
