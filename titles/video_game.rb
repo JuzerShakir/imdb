@@ -12,5 +12,10 @@
 
 # features exclusive to Video Game title type
 module VideoGame
-  # undef_method :duration
+  # remove duration instance method as its not relevant for the game object
+  def self.extended(obj)
+    obj.class.instance_eval do
+      undef_method :duration
+    end
+  end
 end
