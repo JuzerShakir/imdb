@@ -3,7 +3,7 @@
 require "require_all"
 require "nokogiri"
 require "httparty"
-require_all "lib/imdb/"
+require_all "lib/imdb_title/"
 
 ##
 ##
