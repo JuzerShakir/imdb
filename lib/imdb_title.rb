@@ -5,7 +5,7 @@ require "nokogiri"
 require "httparty"
 
 # require all files & folders of this directory 'lib'
-Dir.glob(File.join(__dir__, "**", "*.rb"), &method(:require))
+Dir.glob(File.join(__dir__, "**", "*.rb")).sort.each(&method(:require))
 
 ##
 ##
