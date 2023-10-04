@@ -2,12 +2,13 @@
 
 Gem::Specification.new do |s|
   s.name = "imdb_title"
-  s.version = "0.0.1"
+  s.version = "0.0.2"
   s.licenses = ["MIT", "GPL-2.0"]
   s.summary = "Access info of any Movie, Tv Show, Episode or Game from imdb.com"
   s.description = <<-DESC
-    Provide a valid URL input (such as Movie, Tv Show, Episode or Game) from imdb.com &
-    then extract imp info such as title, tagline, ratings, directors, casts, etc.
+    Want to know everything about your favorite movies, TV shows, episodes, and games?
+    Look no further than our data extraction tool! All the information you need such as
+    title, tagline, ratings, casts, productions, etc will be a method call away.
   DESC
 
   s.author = "Juzer Shakir"
