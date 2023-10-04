@@ -20,4 +20,5 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency "nokogiri", "~> 1.15", ">= 1.15.4"
   s.add_development_dependency "reek", "~> 6.1", ">= 6.1.4"
   s.add_development_dependency "standard", "~> 1.31", ">= 1.31.1"
+  s.required_ruby_version = ">= 2.7.0"
 end

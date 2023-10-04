@@ -6,6 +6,8 @@
 # guidelines for contributions.
 #
 # Any of these may be changed.
+AllCops:
+  TargetRubyVersion: "2.7.0"
 
 StringLiterals:
   Enabled: false
