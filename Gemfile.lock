@@ -1,3 +1,10 @@
+PATH
+  remote: .
+  specs:
+    imdb_title (0.0.8)
+      httparty (~> 0.21.0)
+      nokogiri (~> 1.15, >= 1.15.4)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -18,18 +25,13 @@ GEM
     parser (3.2.2.3)
       ast (~> 2.4.1)
       racc
-    psych (5.1.0)
-      stringio
     racc (1.7.1)
     rainbow (3.1.1)
-    rdoc (6.5.0)
-      psych (>= 4.0.0)
     reek (6.1.4)
       kwalify (~> 0.7.0)
       parser (~> 3.2.0)
       rainbow (>= 2.0, < 4.0)
     regexp_parser (2.8.1)
-    require_all (3.0.0)
     rexml (3.2.6)
     rubocop (1.56.4)
       base64 (~> 0.1.1)
@@ -61,18 +63,14 @@ GEM
     standard-performance (1.2.0)
       lint_roller (~> 1.1)
       rubocop-performance (~> 1.19.0)
-    stringio (3.0.8)
     unicode-display_width (2.4.2)
 
 PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  httparty (~> 0.21.0)
-  nokogiri (~> 1.15, >= 1.15.4)
-  rdoc (~> 6.5)
+  imdb_title!
   reek (~> 6.1, >= 6.1.4)
-  require_all (~> 3.0)
   standard (~> 1.31, >= 1.31.1)
 
 RUBY VERSION
