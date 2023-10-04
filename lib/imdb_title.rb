@@ -1,9 +1,11 @@
 # frozen_string_literal: true
 
-require "require_all"
+# require dependencies
 require "nokogiri"
 require "httparty"
-require_all "lib/imdb_title/"
+
+# require all files & folders of this directory 'lib'
+Dir.glob(File.join(__dir__, "**", "*.rb"), &method(:require))
 
 ##
 ##
