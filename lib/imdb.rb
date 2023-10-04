@@ -3,8 +3,7 @@
 require "require_all"
 require "nokogiri"
 require "httparty"
-require_relative "lib/exceptions"
-require_all "titles/*.rb"
+require_all "lib/imdb/"
 
 ##
 ##
