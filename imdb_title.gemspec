@@ -3,7 +3,7 @@
 Gem::Specification.new do |s|
   s.name = "imdb_title"
   s.version = "0.0.8"
-  s.licenses = ["MIT", "GPL-2.0"]
+  s.licenses = ["MIT"]
   s.summary = "Access info of any Movie, Tv Show, Episode or Game from imdb.com"
   s.description = <<-DESC
     Want to know everything about your favorite movies, TV shows, episodes, and games?
