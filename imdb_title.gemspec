@@ -6,9 +6,8 @@ Gem::Specification.new do |s|
   s.licenses = ["MIT"]
   s.summary = "Access info of any Movie, Tv Show, Episode or Game from imdb.com"
   s.description = <<-DESC
-    Want to know everything about your favorite movies, TV shows, episodes, and games?
-    Look no further than our data extraction tool! All the information you need such as
-    title, tagline, ratings, casts, productions, etc will be a method call away.
+    Extract useful information about your favorite Movies, TV shows, Episodes, or Games
+    with our data extraction library. All the information you need is a method call away.
   DESC
 
   s.author = "Juzer Shakir"
