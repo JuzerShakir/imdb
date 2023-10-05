@@ -15,7 +15,11 @@ Gem::Specification.new do |s|
   s.email = "juzershakir.webdev@gmail.com"
   s.files = Dir["lib/**/*.rb"]
   s.homepage = "https://github.com/JuzerShakir/imdb"
-  s.metadata = {"source_code_uri" => "https://github.com/JuzerShakir/imdb"}
+  s.metadata = {
+    "source_code_uri" => "https://github.com/JuzerShakir/imdb",
+    "changelog_uri" => "https://github.com/JuzerShakir/imdb/CHANGELOG.md",
+    "bug_tracker_uri" => "https://github.com/JuzerShakir/imdb/Issues"
+  }
   s.add_runtime_dependency "httparty", "~> 0.21.0"
   s.add_runtime_dependency "nokogiri", "~> 1.15", ">= 1.15.4"
   s.add_development_dependency "reek", "~> 6.1", ">= 6.1.4"
