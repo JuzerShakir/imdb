@@ -14,7 +14,7 @@
 module NonInteractive
   # returns runtime of the media
   def duration
-    inspect_this document.css("li[data-testid=title-techspec_runtime] div").text
+    document.css("li[data-testid=title-techspec_runtime] div").first&.text
   end
 
   # define streaming_on method that returns on which platform the media is streaming

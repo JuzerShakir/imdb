@@ -16,13 +16,13 @@
 module Movie
   prepend NonInteractive
 
-  # its budget (String)
+  # budget (String)
   def budget
     document.css("li[data-testid=title-boxoffice-budget] div").text[/\$\S+/]
   end
 
-  # its revenue (String)
+  # revenue / Gross Worldwide (String)
   def revenue
-    inspect_this document.css("li[data-testid=title-boxoffice-cumulativeworldwidegross] div").text
+    document.css("li[data-testid=title-boxoffice-cumulativeworldwidegross] div").first&.text
   end
 end

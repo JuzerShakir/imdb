@@ -93,7 +93,7 @@ module IMDb
       document.css("span[data-testid=plot-xl]").first&.text
     end
 
-    # its name
+    # name or title
     def title
       document.css("h1").text
     end
