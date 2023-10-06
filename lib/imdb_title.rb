@@ -27,8 +27,6 @@ Dir.glob(File.join(lib, "**", "*.rb")).sort.each(&method(:require))
 ##
 ##
 
-# :reek:TooManyMethods
-#
 module IMDb
   # pass any Movie, TV-show, Episode or Game url from imdb.com
   class Title
@@ -44,23 +42,25 @@ module IMDb
       end
     end
 
-    # lists all top cast (Array/String)
+    # lists all top cast (Array)
     def casts
-      split_these document.css("a[data-testid=title-cast-item__actor]").text
+      html = document.css("a[data-testid=title-cast-item__actor]")
+      return if html.empty?
+
+      html.map(&:text)
     end
 
-    # list of directors (Array/String)
+    # list of directors (Array)
     def directors
-      html = document.css("li[data-testid=title-pc-principal-credit]")
-      text = html.text
-      return unless text.include? "Director"
+      html = document.css("li[data-testid=title-pc-principal-credit]").first
+      return unless html.text.include? "Director"
 
-      split_these html.css("ul").first.text
+      html.css("div li").map(&:text)
     end
 
-    # list of genres (Array/String)
+    # list of genres (Array)
     def genres
-      split_these document.css("div[data-testid=genres]").text
+      document.css("div[data-testid=genres] div a").map(&:text)
     end
 
     # ID that differentiates each media type on imdb.com (String)
@@ -75,7 +75,7 @@ module IMDb
 
     # list of production companies (Array/String)
     def production_companies
-      split_these document.css("li[data-testid=title-details-companies] li").text
+      document.css("li[data-testid=title-details-companies] li").map(&:text)
     end
 
     # average ratings (String)
@@ -85,12 +85,12 @@ module IMDb
 
     # the date it was release on (String)
     def release_date
-      inspect_this document.css("li[data-testid=title-details-releasedate] div").text
+      document.css("li[data-testid=title-details-releasedate] div").first&.text
     end
 
     # short introduction
     def tagline
-      inspect_this document.css("span[data-testid=plot-xl]").text
+      document.css("span[data-testid=plot-xl]").first&.text
     end
 
     # its name
@@ -114,25 +114,6 @@ module IMDb
       document.title != "404 Error - IMDb"
     end
 
-    # :reek:UtilityFunction
-    # generates the expected output
-    def inspect_this(input)
-      if input.empty?
-        nil
-      elsif input.length == 1
-        input.join
-      else
-        input
-      end
-    end
-
-    # spilits camel case names to array
-    def split_these(names)
-      list = names.split(/(?<=[a-z)])(?=[A-Z])/)
-      inspect_this(list)
-    end
-
-    # returns type of media
     def media_type
       document.css("meta[property*=type]").attribute("content").value
     end
