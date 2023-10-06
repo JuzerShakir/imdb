@@ -15,6 +15,7 @@
 
 # features exclusive to Movie title type
 module Movie
+  prepend NonInteractive
   # returns budget price of the movie
   def budget
     document.css("li[data-testid=title-boxoffice-budget] div").text[/\$\S+/]

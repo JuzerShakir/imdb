@@ -12,4 +12,5 @@
 
 # features exclusive to Episode title type
 module Episode
+  prepend NonInteractive
 end

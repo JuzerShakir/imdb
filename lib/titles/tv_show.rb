@@ -12,4 +12,5 @@
 
 # features exclusive to Tv-Show title type
 module TvShow
+  prepend NonInteractive
 end

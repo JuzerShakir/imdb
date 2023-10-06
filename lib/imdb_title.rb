@@ -59,11 +59,6 @@ module IMDb
       split_these html.css("ul").first.text
     end
 
-    # returns runtime of the title
-    def duration
-      inspect_this document.css("li[data-testid=title-techspec_runtime] div").text
-    end
-
     # returns list of genres
     def genres
       split_these document.css("div[data-testid=genres]").text
