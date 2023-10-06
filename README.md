@@ -42,12 +42,12 @@ movie = IMDb::Title.new("https://www.imdb.com/title/tt0111161")
 movie.title                 #=> The Shawshank Redemption
 movie.budget                #=> $25,000,000
 movie.casts.first(2)        #=> ["Tim Robbins", "Morgan Freeman"]
-movie.directors             #=> Frank Darabont
+movie.directors             #=> ["Frank Darabont"]
 movie.duration              #=> 2 hours 22 minutes
-movie.genres                #=> Drama
+movie.genres                #=> ["Drama"]
 movie.imdb_id               #=> tt0111161
 movie.popularity            #=> 2.8M
-movie.production_companies  #=> Castle Rock Entertainment
+movie.production_companies  #=> ["Castle Rock Entertainment"]
 movie.ratings               #=> 9.3
 movie.release_date          #=> October 14, 1994 (India)
 movie.revenue               #=> $28,884,716
@@ -55,7 +55,7 @@ movie.tagline               #=> Over the course of several years, two convicts..
 
 ```
 
-These will return an `array` type if there are multiple names to output else `string` type:
+These will return an `array` type:
 
 1. `casts`
 2. `production_companies`
