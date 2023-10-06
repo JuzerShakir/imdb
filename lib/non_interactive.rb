@@ -4,7 +4,7 @@
 ##
 ##
 ###### ---------------- List of features/data avialable to extract -----------------------
-###    All features are available from Base class
+###    All features are available from Title class
 
 ##  1. duration
 ##

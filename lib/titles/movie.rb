@@ -4,8 +4,7 @@
 ##
 ##
 ###### ---------------- List of features/data avialable to extract -----------------------
-###    All features are available from Base class
-
+###    All features are available from Title class
 #### ------- BOX OFFICE ---------
 ###   12. Budget
 ###   13. Gross Worldwide (Revenue)
@@ -13,15 +12,16 @@
 ##
 ##
 
-# features exclusive to Movie title type
+# features exclusive to Movie media type
 module Movie
   prepend NonInteractive
-  # returns budget price of the movie
+
+  # its budget (String)
   def budget
     document.css("li[data-testid=title-boxoffice-budget] div").text[/\$\S+/]
   end
 
-  # returns revenue price of the movie
+  # its revenue (String)
   def revenue
     inspect_this document.css("li[data-testid=title-boxoffice-cumulativeworldwidegross] div").text
   end
