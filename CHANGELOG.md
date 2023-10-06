@@ -1,5 +1,22 @@
 # Changelog
 
+## [v0.0.10](https://github.com/JuzerShakir/imdb/tree/v0.0.10) (2023-10-06)
+
+A new **MUST UPDATE** patch release! 🎉
+
+This version includes following changes:
+
+- **Major Bug fix** - If a `game` media-type instance has been initialized then the `duration` method will not work for other media-type instances that are created after.
+  - To solve the above issue, we created a different module named `non_interactive` which will `prepend` in all modules under `titles\` directory except the `VideoGame` module.
+  - Shift the `duration` method from `IMDb::Title` class to `NonInteractive` module.
+- Remove `split_these` & `inspect_this` methods from `IMDb::Title` class
+- Rename `UnSupportedTypeError` to `UnSupportedMediaType`.
+- Update few methods to return an array type else `nil` if it doesn't exist.
+- Update comments for better documentation.
+- Add `.reek.yml` file to ignore smell detectors in edge cases.
+
+---
+
 ## [v0.0.9](https://github.com/JuzerShakir/imdb/tree/v0.0.9) (2023-10-04)
 
 A new patch release! 🎉
