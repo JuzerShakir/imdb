@@ -8,5 +8,5 @@ module IMDb
   class InvalidURL < Error; end
 
   # Will raise this error if URL is UNSUPPORTED title type
-  class UnSupportedType < InvalidURL; end
+  class UnSupportedMediaType < InvalidURL; end
 end
