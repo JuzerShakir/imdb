@@ -1,0 +1,8 @@
+---
+### Generic smell configuration
+
+detectors:
+  FeatureEnvy:
+    exclude:
+      - "IMDb::Title#casts"
+      - "IMDb::Title#directors"
