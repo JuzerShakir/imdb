@@ -38,7 +38,6 @@ module IMDb
       when "video.tv_show" then extend TvShow
       when "video.episode" then extend Episode
       when "video.other" then extend VideoGame
-      else raise UnSupportedMediaType, "Unknown media type"
       end
     end
 
