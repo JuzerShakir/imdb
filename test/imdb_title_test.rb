@@ -22,8 +22,10 @@ class TestIMDbTitle < Minitest::Test
 
   def test_casts
     # movie
-    assert_includes(MOVIE.casts, "Tim Robbins")
-    assert_equal(18, MOVIE.casts.length)
+    movie_casts = MOVIE.casts
+    assert_includes(movie_casts, "Tim Robbins")
+    assert_equal(18, movie_casts.length)
+    assert_instance_of(Array, movie_casts)
     # tv
     assert_includes(TV.casts, "Bryan Cranston")
     # episode
@@ -76,8 +78,10 @@ class TestIMDbTitle < Minitest::Test
     # movie
     assert_equal(["Castle Rock Entertainment"], MOVIE.production_companies)
     # tv
-    assert_includes(TV.production_companies, "Gran Via Productions")
-    assert_equal(3, TV.production_companies.length)
+    producers = TV.production_companies
+    assert_includes(producers, "Gran Via Productions")
+    assert_equal(3, producers.length)
+    assert_instance_of(Array, producers)
     # episode
     assert_equal(["Sister Pictures"], EPISODE.production_companies)
     # game
