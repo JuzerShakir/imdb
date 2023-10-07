@@ -1,5 +1,19 @@
 # Changelog
 
+## [v0.0.12](https://github.com/JuzerShakir/imdb/tree/v0.0.12) (2023-10-08)
+
+A new patch release! 🎉
+
+This version includes following changes:
+
+- Initiate GitHub Continuous Integration (CI) workflow that builds & tests this application.
+- Create descriptive comments for all the Test classes.
+- Add `DuplicateMethodCall` and `TooManyStatements` configuration to `.reek.yml`.
+- Add assertions to existing tests and create inheritance tests for each media type.
+- Add rake task to check for linting & code smell issues with a single command.
+
+---
+
 ## [v0.0.11](https://github.com/JuzerShakir/imdb/tree/v0.0.11) (2023-10-07)
 
 A new patch release! 🎉
