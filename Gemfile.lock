@@ -18,6 +18,7 @@ GEM
     language_server-protocol (3.17.0.3)
     lint_roller (1.1.0)
     mini_mime (1.1.5)
+    minitest (5.20.0)
     multi_xml (0.6.0)
     nokogiri (1.15.4-x86_64-linux)
       racc (~> 1.4)
@@ -27,6 +28,7 @@ GEM
       racc
     racc (1.7.1)
     rainbow (3.1.1)
+    rake (13.0.6)
     reek (6.1.4)
       kwalify (~> 0.7.0)
       parser (~> 3.2.0)
@@ -70,6 +72,8 @@ PLATFORMS
 
 DEPENDENCIES
   imdb_title!
+  minitest (~> 5.20)
+  rake (~> 13.0, >= 13.0.6)
   reek (~> 6.1, >= 6.1.4)
   standard (~> 1.31, >= 1.31.1)
 
