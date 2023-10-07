@@ -3,6 +3,7 @@
 require "minitest/autorun"
 require_relative "../lib/imdb_title"
 
+# tests against all the methods in the IMDb::Title class for all types of media
 class TestIMDbTitle < Minitest::Test
   shawshank_redemption = "https://www.imdb.com/title/tt0111161/"
   MOVIE = IMDb::Title.new(shawshank_redemption)
