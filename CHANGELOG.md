@@ -1,5 +1,17 @@
 # Changelog
 
+## [v0.0.11](https://github.com/JuzerShakir/imdb/tree/v0.0.11) (2023-10-07)
+
+A new patch release! 🎉
+
+This version includes following changes:
+
+- Fetch for `Creators` for Tv media type as they're named as that instead of `Directors`.
+- Create test suites & setup rake task for it.
+- Mention dependency gems in `Gemfile` rather then `imdb_title.gemspec` file.
+
+---
+
 ## [v0.0.10](https://github.com/JuzerShakir/imdb/tree/v0.0.10) (2023-10-06)
 
 A new **MUST UPDATE** patch release! 🎉
