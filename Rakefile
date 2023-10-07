@@ -7,3 +7,9 @@ Rake::TestTask.new do |t|
   t.pattern = "test/**/*_test.rb"
   t.warning = false
 end
+
+desc "linting & code smell detector"
+task :analysis do
+  sh "standardrb"
+  sh "reek"
+end

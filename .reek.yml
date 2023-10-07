@@ -6,3 +6,8 @@ detectors:
     exclude:
       - "IMDb::Title#casts"
       - "IMDb::Title#directors"
+  DuplicateMethodCall:
+    exclude:
+      - "Exceptions#test_invalid_url"
+  TooManyStatements:
+    max_statements: 10
