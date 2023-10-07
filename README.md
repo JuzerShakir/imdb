@@ -7,7 +7,9 @@
 <!-- [![Tests](https://github.com/JuzerShakir/imdb/workflows/Tests/badge.svg)](https://github.com/JuzerShakir/imdb/actions?query=workflow%3ATests) -->
 
 [![Gem Version](https://badge.fury.io/rb/imdb_title.svg)](https://badge.fury.io/rb/imdb_title)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/34e771dd961cd0f7a5d4/test_coverage)](https://codeclimate.com/github/JuzerShakir/imdb/test_coverage)
+
+<!-- [![Test Coverage](https://api.codeclimate.com/v1/badges/34e771dd961cd0f7a5d4/test_coverage)](https://codeclimate.com/github/JuzerShakir/imdb/test_coverage) -->
+
 [![Maintainability](https://api.codeclimate.com/v1/badges/34e771dd961cd0f7a5d4/maintainability)](https://codeclimate.com/github/JuzerShakir/imdb/maintainability)
 
 Want to extract useful information about your favorite **Movies, TV shows, Episodes, and Games**?
