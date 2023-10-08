@@ -1,14 +1,13 @@
 # frozen_string_literal: true
 
-require "minitest/autorun"
-require_relative "../../lib/imdb_title"
+# require all dependencies to run the test suites
+require_relative "../test_helper"
 
 # tests against all the methods of Episode Module
 class TestEpisode < Minitest::Test
-  open_wide = "https://www.imdb.com/title/tt9166672"
-  EPISODE = IMDb::Title.new(open_wide)
+  @@episode = LoadMedia.episode
 
   def test_inheritance
-    assert_kind_of(Episode, EPISODE)
+    assert_kind_of(Episode, @@episode)
   end
 end

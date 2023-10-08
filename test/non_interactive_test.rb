@@ -1,21 +1,14 @@
 # frozen_string_literal: true
 
-require "minitest/autorun"
-require_relative "../lib/imdb_title"
+# require all dependencies to run the test suites
+require_relative "test_helper"
 
 # tests against all the methods of NonInteractive Module
 class TestNonInteractive < Minitest::Test
-  shawshank_redemption = "https://www.imdb.com/title/tt0111161/"
-  MOVIE = IMDb::Title.new(shawshank_redemption)
-
-  # breaking_bad = "https://www.imdb.com/title/tt0903747"
-  # TV = IMDb::Title.new(breaking_bad)
-
-  # open_wide = "https://www.imdb.com/title/tt9166672"
-  # EPISODE = IMDb::Title.new(open_wide)
+  @@episode, @@movie, @@tv = LoadMedia.non_interactive
 
   def test_duration
     # movie, tv_show, episode
-    assert_equal("2 hours 22 minutes", MOVIE.duration, "should return duration of the movie in string format")
+    assert_equal("2 hours 22 minutes", @@movie.duration, "should return duration of the movie in string format")
   end
 end

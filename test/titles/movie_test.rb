@@ -1,22 +1,21 @@
 # frozen_string_literal: true
 
-require "minitest/autorun"
-require_relative "../../lib/imdb_title"
+# require all dependencies to run the test suites
+require_relative "../test_helper"
 
 # tests against all the methods of Movie Module
 class TestMovie < Minitest::Test
-  shawshank_redemption = "https://www.imdb.com/title/tt0111161/"
-  MOVIE = IMDb::Title.new(shawshank_redemption)
+  @@movie = LoadMedia.movie
 
   def test_inheritance
-    assert_kind_of(Movie, MOVIE)
+    assert_kind_of(Movie, @@movie)
   end
 
   def test_budget
-    assert_equal("$25,000,000", MOVIE.budget)
+    assert_equal("$25,000,000", @@movie.budget)
   end
 
   def test_revenue
-    assert_equal("$28,884,716", MOVIE.revenue)
+    assert_equal("$28,884,716", @@movie.revenue)
   end
 end

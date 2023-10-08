@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require "minitest/autorun"
-require_relative "../lib/imdb_title"
+# require all dependencies to run the test suites
+require_relative "test_helper"
 
 # tests for custom exceptions
 class Exceptions < Minitest::Test
