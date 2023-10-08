@@ -11,3 +11,8 @@ detectors:
       - "Exceptions#test_invalid_url"
   TooManyStatements:
     max_statements: 10
+
+directories:
+  "test":
+    ClassVariable:
+      enabled: false
