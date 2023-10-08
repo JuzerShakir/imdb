@@ -20,7 +20,6 @@ Dir.glob(File.join(lib, "**", "*.rb")).sort.each(&method(:require))
 ###   6. Ratings
 ###   7. Title
 ###   8. Tagline
-#### ------- DETAILS ---------
 ###   9. Prodcution Companies
 ###   10. Release Date
 ##
@@ -72,7 +71,7 @@ module IMDb
       document.css("div[data-testid=hero-rating-bar__aggregate-rating] span div").last&.text
     end
 
-    # list of production companies (Array/String)
+    # list of production companies (Array)
     def production_companies
       document.css("li[data-testid=title-details-companies] li").map(&:text)
     end
