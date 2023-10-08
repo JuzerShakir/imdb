@@ -1,16 +1,8 @@
 # frozen_string_literal: true
 
-# require dependencies
-require "nokogiri"
-require "httparty"
+# load all dependencies
+require_relative "helper"
 
-# require all files & folders of the current directory 'lib'
-lib = __dir__
-Dir.glob(File.join(lib, "**", "*.rb")).sort.each(&method(:require))
-
-##
-##
-##
 ###### ---------------- List of features/data avialable to extract -----------------------
 ###   1. Cast
 ###   2. Director
@@ -22,9 +14,6 @@ Dir.glob(File.join(lib, "**", "*.rb")).sort.each(&method(:require))
 ###   8. Tagline
 ###   9. Prodcution Companies
 ###   10. Release Date
-##
-##
-##
 
 module IMDb
   # pass any Movie, TV-show, Episode or Game url from imdb.com
