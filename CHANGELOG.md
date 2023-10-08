@@ -1,6 +1,19 @@
 # Changelog
 
-## [v0.0.12](https://github.com/JuzerShakir/imdb/tree/v0.0.12) (2023-10-08)
+## [v0.0.13](https://github.com/JuzerShakir/imdb/tree/v0.0.13) (2023-10-08)
+
+A new patch release! 🎉
+
+This version includes following changes:
+
+- Update Comments.
+- Init `test/test_helper.rb` file that will load all dependencies required to perform tests.
+- Init `lib/helper.rb` file to load all libraries & files required to run code logic.
+- Replace all constants with class variables.
+
+---
+
+## [v0.0.12](https://github.com/JuzerShakir/imdb/tree/v0.0.12) (2023-10-07)
 
 A new patch release! 🎉
 

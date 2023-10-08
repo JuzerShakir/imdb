@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = "imdb_title"
-  s.version = "0.0.12"
+  s.version = "0.0.13"
   s.licenses = ["MIT"]
   s.summary = "Access info of any Movie, Tv Show, Episode or Game from imdb.com"
   s.description = <<-DESC
