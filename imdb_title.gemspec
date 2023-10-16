@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = "imdb_title"
-  s.version = "0.0.13"
+  s.version = "0.0.14"
   s.licenses = ["MIT"]
   s.summary = "Access info of any Movie, Tv Show, Episode or Game from imdb.com"
   s.description = <<-DESC
@@ -16,8 +16,8 @@ Gem::Specification.new do |s|
   s.homepage = "https://github.com/JuzerShakir/imdb"
   s.metadata = {
     "source_code_uri" => "https://github.com/JuzerShakir/imdb",
-    "changelog_uri" => "https://github.com/JuzerShakir/imdb/CHANGELOG.md",
-    "bug_tracker_uri" => "https://github.com/JuzerShakir/imdb/Issues"
+    "changelog_uri" => "https://github.com/JuzerShakir/imdb/blob/master/CHANGELOG.md",
+    "bug_tracker_uri" => "https://github.com/JuzerShakir/imdb/issues"
   }
   s.add_runtime_dependency "httparty", "~> 0.21.0"
   s.add_runtime_dependency "nokogiri", "~> 1.15", ">= 1.15.4"
