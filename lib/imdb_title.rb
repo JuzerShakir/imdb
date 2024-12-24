@@ -47,7 +47,7 @@ module IMDb
 
     # list of genres (Array)
     def genres
-      document.css("div[data-testid=genres] div a").map(&:text)
+      document.css("div[data-testid=interests] div a").map(&:text)
     end
 
     # ID that differentiates each media type on imdb.com (String)
