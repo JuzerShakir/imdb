@@ -3,7 +3,7 @@
 ##
 ##
 ##
-###### ---------------- List of features/data avialable to extract -----------------------
+###### ---------------- List of features/data available to extract -----------------------
 ###    All features are available from Title class
 
 ##  1. duration

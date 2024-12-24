@@ -55,7 +55,7 @@ class TestIMDbTitle < Minitest::Test
   end
 
   def test_popularity
-    # movie, tv, episdoe
+    # movie, tv, episode
     assert_equal("2.8M", @@movie.popularity)
     # unreleased
     assert_nil(@@in_development.popularity)

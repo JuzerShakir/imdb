@@ -3,7 +3,7 @@
 # load all dependencies
 require_relative "helper"
 
-###### ---------------- List of features/data avialable to extract -----------------------
+###### ---------------- List of features/data available to extract -----------------------
 ###   1. Cast
 ###   2. Director
 ###   3. Genres
@@ -12,7 +12,7 @@ require_relative "helper"
 ###   6. Ratings
 ###   7. Title
 ###   8. Tagline
-###   9. Prodcution Companies
+###   9. Production Companies
 ###   10. Release Date
 
 module IMDb
