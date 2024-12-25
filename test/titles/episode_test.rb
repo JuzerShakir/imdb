@@ -14,9 +14,9 @@ class TestEpisode < TestHelper
   end
 
   def test_title
-    title = title.title
-    super title
-    assert_equal("Open Wide, O Earth", title)
+    heading = title.title
+    super heading
+    assert_equal("Open Wide, O Earth", heading)
   end
 
   def test_tagline = super title.tagline
