@@ -2,7 +2,6 @@
 
 # require all dependencies to run the test suites
 require_relative "../test_helper"
-require_relative "../imdb_title_test"
 
 # tests against all the methods of Episode Module
 class TestEpisode < Minitest::Test
