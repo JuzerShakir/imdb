@@ -24,6 +24,13 @@ Rake::TestTask.new(:test_tv) do |t|
   t.warning = false
 end
 
+# bundle exec rake test_episode
+desc "Run unit tests for an Episode"
+Rake::TestTask.new(:test_episode) do |t|
+  t.pattern = "test/titles/episode_test.rb"
+  t.warning = false
+end
+
 desc "linting & code smell detector"
 task :analysis do
   sh "standardrb"
