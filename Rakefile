@@ -2,7 +2,7 @@
 
 require "rake/testtask"
 
-desc "Run unit tests"
+desc "Run all unit tests"
 Rake::TestTask.new(:test) do |t|
   t.libs << "lib"
   t.libs << "test"
