@@ -10,6 +10,13 @@ Rake::TestTask.new(:test) do |t|
   t.warning = false
 end
 
+# bundle exec rake test_movie
+desc "Run unit tests for Movie"
+Rake::TestTask.new(:test_movie) do |t|
+  t.pattern = "test/titles/movie_test.rb"
+  t.warning = false
+end
+
 desc "linting & code smell detector"
 task :analysis do
   sh "standardrb"
