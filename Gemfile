@@ -9,6 +9,7 @@ gemspec
 
 gem "debug", platforms: %i[mri windows], require: "debug/prelude"
 gem "minitest", "~> 5.20"
+gem "minitest-hooks", "~> 1.5", ">= 1.5.2"
 gem "rake", "~> 13.0", ">= 13.0.6"
 gem "reek", "~> 6.1", ">= 6.1.4"
 gem "standard", "~> 1.31", ">= 1.31.1"

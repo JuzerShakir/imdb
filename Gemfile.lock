@@ -27,6 +27,8 @@ GEM
     lint_roller (1.1.0)
     mini_mime (1.1.5)
     minitest (5.20.0)
+    minitest-hooks (1.5.2)
+      minitest (> 5.3)
     multi_xml (0.6.0)
     nokogiri (1.15.4-x86_64-linux)
       racc (~> 1.4)
@@ -90,6 +92,7 @@ DEPENDENCIES
   debug
   imdb_title!
   minitest (~> 5.20)
+  minitest-hooks (~> 1.5, >= 1.5.2)
   rake (~> 13.0, >= 13.0.6)
   reek (~> 6.1, >= 6.1.4)
   standard (~> 1.31, >= 1.31.1)
