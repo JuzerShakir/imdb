@@ -8,41 +8,44 @@ class TestTvShow < TestHelper
   ID = "tt0903747" # breaking bad
 
   def test_imdb_id
-    super @title.imdb_id
-    assert_equal(ID, @title.imdb_id)
+    id = title.imdb_id
+    super id
+    assert_equal(ID, id)
   end
 
   def test_title
-    super @title.title
-    assert_equal("Breaking Bad", @title.title)
+    heading = title.title
+    super heading
+    assert_equal("Breaking Bad", heading)
   end
 
-  def test_tagline = super @title.tagline
+  def test_tagline = super title.tagline
 
-  def test_genres = super @title.genres
+  def test_genres = super title.genres
 
-  def test_ratings = super @title.ratings
+  def test_ratings = super title.ratings
 
-  def test_popularity = super @title.popularity
+  def test_popularity = super title.popularity
 
   def test_release_date
-    super @title.release_date
-    assert_equal("September 5, 2016 (India)", @title.release_date)
+    release_date = title.release_date
+    super release_date
+    assert_equal("September 5, 2016 (India)", release_date)
   end
 
   def test_duration
-    duration = @title.duration
+    duration = title.duration
     assert_kind_of String, duration
     assert_equal("45 minutes", duration)
   end
 
-  def test_casts = super @title.casts
+  def test_casts = super title.casts
 
-  def test_directors = super @title.directors
+  def test_directors = super title.directors
 
-  def test_production_companies = super @title.production_companies
+  def test_production_companies = super title.production_companies
 
   def test_instance_of_class
-    assert_kind_of(TvShow, @title)
+    assert_kind_of(TvShow, title)
   end
 end

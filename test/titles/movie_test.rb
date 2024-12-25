@@ -8,49 +8,54 @@ class TestMovie < TestHelper
   ID = "tt0111161" # the shawshank redemption
 
   def test_imdb_id
-    super @title.imdb_id
-    assert_equal(ID, @title.imdb_id)
+    id = title.imdb_id
+    super id
+    assert_equal(ID, id)
   end
 
   def test_title
-    super @title.title
-    assert_equal("The Shawshank Redemption", @title.title)
+    heading = title.title
+    super heading
+    assert_equal("The Shawshank Redemption", heading)
   end
 
-  def test_tagline = super @title.tagline
+  def test_tagline = super title.tagline
 
-  def test_genres = super @title.genres
+  def test_genres = super title.genres
 
-  def test_ratings = super @title.ratings
+  def test_ratings = super title.ratings
 
-  def test_popularity = super @title.popularity
+  def test_popularity = super title.popularity
 
   def test_release_date
-    super @title.release_date
-    assert_equal("October 14, 1994 (India)", @title.release_date)
+    release_date = title.release_date
+    super release_date
+    assert_equal("October 14, 1994 (India)", release_date)
   end
 
   def test_duration
-    duration = @title.duration
+    duration = title.duration
     assert_kind_of String, duration
     assert_equal("2 hours 22 minutes", duration)
   end
 
-  def test_casts = super @title.casts
+  def test_casts = super title.casts
 
-  def test_directors = super @title.directors
+  def test_directors = super title.directors
 
-  def test_production_companies = super @title.production_companies
+  def test_production_companies = super title.production_companies
 
-  def test_instance_of_class = assert_kind_of(Movie, @title)
+  def test_instance_of_class = assert_kind_of(Movie, title)
 
   def test_budget
-    assert_kind_of(String, @title.budget)
-    assert_match(/\A\$\d+(?:,\d{3})*\z/, @title.budget)
+    budget = title.budget
+    assert_kind_of(String, budget)
+    assert_match(/\A\$\d+(?:,\d{3})*\z/, budget)
   end
 
   def test_revenue
-    assert_kind_of(String, @title.revenue)
-    assert_match(/\A\$\d+(?:,\d{3})*\z/, @title.revenue)
+    revenue = title.revenue
+    assert_kind_of(String, revenue)
+    assert_match(/\A\$\d+(?:,\d{3})*\z/, revenue)
   end
 end

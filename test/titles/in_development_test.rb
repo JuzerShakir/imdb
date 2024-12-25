@@ -8,44 +8,51 @@ class TestTitleInDevelopment < TestHelper
   ID = "tt10671440" # blade
 
   def test_imdb_id
-    super @title.imdb_id
-    assert_equal(ID, @title.imdb_id)
+    id = title.imdb_id
+    super id
+    assert_equal(ID, id)
   end
 
   def test_title
-    super @title.title
-    assert_equal("The Blade", @title.title)
+    heading = title.title
+    super heading
+    assert_equal("The Blade", heading)
   end
 
   def test_tagline
-    assert(@title.tagline.is_a?(String) || @title.tagline.nil?)
+    tagline = title.tagline
+    assert(tagline.is_a?(String) || tagline.nil?)
   end
 
   def test_genres
-    assert(@title.genres.is_a?(Array) || @title.genres.nil?)
+    genres = title.genres
+    assert(genres.is_a?(Array) || genres.nil?)
   end
 
   def test_ratings
-    assert_nil(@title.ratings)
+    assert_nil(title.ratings)
   end
 
   def test_popularity
-    assert_nil(@title.popularity)
+    assert_nil(title.popularity)
   end
 
   def test_release_date
-    assert_nil(@title.release_date)
+    assert_nil(title.release_date)
   end
 
   def test_casts
-    assert(@title.casts.is_a?(Array) || @title.casts.nil?)
+    casts = title.casts
+    assert(casts.is_a?(Array) || casts.nil?)
   end
 
   def test_directors
-    assert(@title.directors.is_a?(Array) || @title.directors.nil?)
+    directors = title.directors
+    assert(directors.is_a?(Array) || directors.nil?)
   end
 
   def test_production_companies
-    assert(@title.production_companies.is_a?(Array) || @title.production_companies.nil?)
+    production_companies = title.production_companies
+    assert(production_companies.is_a?(Array) || production_companies.nil?)
   end
 end
