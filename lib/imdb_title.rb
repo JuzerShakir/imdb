@@ -40,7 +40,7 @@ module IMDb
     # list of directors (Array)
     def directors
       html = document.css("li[data-testid=title-pc-principal-credit]").first
-      return unless html.text.match?(/Director|Creator/)
+      return unless html&.text&.match?(/Director|Creator/)
 
       html.css("div li").map(&:text)
     end
