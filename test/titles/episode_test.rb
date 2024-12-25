@@ -4,50 +4,45 @@
 require_relative "../test_helper"
 
 # tests against all the methods of Episode Module
-class TestEpisode < Minitest::Test
-  include Minitest::Hooks
-  include TestIMDbTitle
-
-  URL = "https://www.imdb.com/title/tt9166672" # open wide, o earth
-
-  before(:all) { @episode = IMDb::Title.new URL }
+class TestEpisode < TestHelper
+  ID = "tt9166672" # open wide, o earth
 
   def test_imdb_id
-    super @episode.imdb_id
-    assert_equal("tt9166672", @episode.imdb_id)
+    super @title.imdb_id
+    assert_equal("tt9166672", @title.imdb_id)
   end
 
   def test_title
-    super @episode.title
-    assert_equal("Open Wide, O Earth", @episode.title)
+    super @title.title
+    assert_equal("Open Wide, O Earth", @title.title)
   end
 
-  def test_tagline = super @episode.tagline
+  def test_tagline = super @title.tagline
 
-  def test_genres = super @episode.genres
+  def test_genres = super @title.genres
 
-  def test_ratings = super @episode.ratings
+  def test_ratings = super @title.ratings
 
-  def test_popularity = super @episode.popularity
+  def test_popularity = super @title.popularity
 
   def test_release_date
-    super @episode.release_date
-    assert_equal("May 20, 2019 (United States)", @episode.release_date)
+    super @title.release_date
+    assert_equal("May 20, 2019 (United States)", @title.release_date)
   end
 
   def test_duration
-    duration = @episode.duration
+    duration = @title.duration
     assert_kind_of String, duration
     assert_equal("1 hour 5 minutes", duration)
   end
 
-  def test_casts = super @episode.casts
+  def test_casts = super @title.casts
 
-  def test_directors = super @episode.directors
+  def test_directors = super @title.directors
 
-  def test_production_companies = super @episode.production_companies
+  def test_production_companies = super @title.production_companies
 
   def test_instance_of_class
-    assert_kind_of(Episode, @episode)
+    assert_kind_of(Episode, @title)
   end
 end

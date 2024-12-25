@@ -4,48 +4,43 @@
 require_relative "../test_helper"
 
 # tests against all the methods of VideoGame Module
-class TestVideoGame < Minitest::Test
-  include Minitest::Hooks
-  include TestIMDbTitle
-
-  URL = "https://www.imdb.com/title/tt2140553" # the last of us
-
-  before(:all) { @game = IMDb::Title.new URL }
+class TestVideoGame < TestHelper
+  ID = "tt2140553" # the last of us
 
   def test_imdb_id
-    super @game.imdb_id
-    assert_equal("tt2140553", @game.imdb_id)
+    super @title.imdb_id
+    assert_equal("tt2140553", @title.imdb_id)
   end
 
   def test_title
-    super @game.title
-    assert_equal("The Last of Us", @game.title)
+    super @title.title
+    assert_equal("The Last of Us", @title.title)
   end
 
-  def test_tagline = super @game.tagline
+  def test_tagline = super @title.tagline
 
-  def test_genres = super @game.genres
+  def test_genres = super @title.genres
 
-  def test_ratings = super @game.ratings
+  def test_ratings = super @title.ratings
 
-  def test_popularity = super @game.popularity
+  def test_popularity = super @title.popularity
 
   def test_release_date
-    super @game.release_date
-    assert_equal("June 14, 2013 (United States)", @game.release_date)
+    super @title.release_date
+    assert_equal("June 14, 2013 (United States)", @title.release_date)
   end
 
   def test_duration
-    assert_raises(NoMethodError) { @game.duration }
+    assert_raises(NoMethodError) { @title.duration }
   end
 
-  def test_casts = super @game.casts
+  def test_casts = super @title.casts
 
-  def test_directors = super @game.directors
+  def test_directors = super @title.directors
 
-  def test_production_companies = super @game.production_companies
+  def test_production_companies = super @title.production_companies
 
   def test_instance_of_class
-    assert_kind_of(VideoGame, @game)
+    assert_kind_of(VideoGame, @title)
   end
 end
