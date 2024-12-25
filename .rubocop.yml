@@ -7,7 +7,7 @@
 #
 # Any of these may be changed.
 AllCops:
-  TargetRubyVersion: "2.7.0"
+  TargetRubyVersion: "3.2.2"
 
 StringLiterals:
   Enabled: false
