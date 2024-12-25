@@ -30,13 +30,3 @@ module LoadMedia
       IMDb::Title.new(shawshank_redemption)
     end
 
-    def non_interactive
-      [episode, movie, tv]
-    end
-
-    def tv
-      breaking_bad = "https://www.imdb.com/title/tt0903747"
-      IMDb::Title.new(breaking_bad)
-    end
-  end
-end

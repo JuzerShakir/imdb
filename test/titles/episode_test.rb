@@ -9,7 +9,9 @@ class TestEpisode < Minitest::Test
   include Minitest::Hooks
   include TestIMDbTitle
 
-  before(:all) { @episode = LoadMedia.episode }
+  URL = "https://www.imdb.com/title/tt9166672" # open wide, o earth
+
+  before(:all) { @episode = IMDb::Title.new URL }
 
   def test_imdb_id
     super @episode.imdb_id

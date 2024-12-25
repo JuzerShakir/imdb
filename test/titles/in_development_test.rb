@@ -9,7 +9,9 @@ class TestTitleInDevelopment < Minitest::Test
   include Minitest::Hooks
   include TestIMDbTitle
 
-  before(:all) { @dev = LoadMedia.in_development }
+  URL = "https://www.imdb.com/title/tt10671440" # blade
+
+  before(:all) { @dev = IMDb::Title.new URL }
 
   def test_imdb_id
     super @dev.imdb_id

@@ -9,7 +9,9 @@ class TestMovie < Minitest::Test
   include Minitest::Hooks
   include TestIMDbTitle
 
-  before(:all) { @movie = LoadMedia.movie }
+  URL = "https://www.imdb.com/title/tt0111161/" # the shawshank redemption
+
+  before(:all) { @movie = IMDb::Title.new URL }
 
   def test_imdb_id
     super @movie.imdb_id

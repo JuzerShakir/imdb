@@ -9,7 +9,9 @@ class TestVideoGame < Minitest::Test
   include Minitest::Hooks
   include TestIMDbTitle
 
-  before(:all) { @game = LoadMedia.game }
+  URL = "https://www.imdb.com/title/tt2140553" # the last of us
+
+  before(:all) { @game = IMDb::Title.new URL }
 
   def test_imdb_id
     super @game.imdb_id
