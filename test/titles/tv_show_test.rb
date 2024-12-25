@@ -34,6 +34,12 @@ class TestTvShow < Minitest::Test
     assert_equal("September 5, 2016 (India)", @tv.release_date)
   end
 
+  def test_duration
+    duration = @tv.duration
+    assert_kind_of String, duration
+    assert_equal("45 minutes", duration)
+  end
+
   def test_casts = super @tv.casts
 
   def test_directors = super @tv.directors

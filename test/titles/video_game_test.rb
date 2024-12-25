@@ -34,6 +34,10 @@ class TestVideoGame < Minitest::Test
     assert_equal("June 14, 2013 (United States)", @game.release_date)
   end
 
+  def test_duration
+    assert_raises(NoMethodError) { @game.duration }
+  end
+
   def test_casts = super @game.casts
 
   def test_directors = super @game.directors
