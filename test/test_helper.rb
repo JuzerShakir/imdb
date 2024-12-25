@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require "minitest/autorun"
+require "minitest/hooks"
 require_relative "../lib/imdb_title"
 
 module LoadMedia
