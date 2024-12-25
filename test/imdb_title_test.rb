@@ -1,9 +1,6 @@
 # frozen_string_literal: true
 
-# require all dependencies to run the test suites
-require_relative "test_helper"
-
-module TestIMDbTitle
+module IMDbTitleTest
   def test_imdb_id(object) = assert_kind_of String, object
 
   def test_title(object) = assert_kind_of String, object
