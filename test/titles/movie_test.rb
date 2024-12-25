@@ -9,7 +9,7 @@ class TestMovie < TestHelper
 
   def test_imdb_id
     super @title.imdb_id
-    assert_equal("tt0111161", @title.imdb_id)
+    assert_equal(ID, @title.imdb_id)
   end
 
   def test_title
