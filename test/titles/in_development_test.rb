@@ -5,7 +5,7 @@ require_relative "../test_helper"
 
 # tests against all the methods of VideoGame Module
 class TestTitleInDevelopment < TestHelper
-  ID = "tt10671440" # blade
+  ID = "tt4576032" # blade
 
   def test_imdb_id
     id = title.imdb_id
@@ -16,7 +16,7 @@ class TestTitleInDevelopment < TestHelper
   def test_title
     heading = title.title
     super heading
-    assert_equal("The Blade", heading)
+    assert_equal("300: The Resurgence", heading)
   end
 
   def test_tagline
