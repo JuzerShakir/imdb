@@ -20,8 +20,8 @@ module LoadMedia
     end
 
     def in_development
-      justice_league = "https://www.imdb.com/title/tt4121026"
-      IMDb::Title.new(justice_league)
+      blade = "https://www.imdb.com/title/tt10671440"
+      IMDb::Title.new(blade)
     end
 
     def movie
