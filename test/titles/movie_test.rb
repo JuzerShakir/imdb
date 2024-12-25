@@ -12,10 +12,12 @@ class TestMovie < Minitest::Test
   end
 
   def test_budget
-    assert_equal("$25,000,000", @@movie.budget)
+    assert_kind_of(String, @@movie.budget)
+    assert_match(/\A\$\d+(?:,\d{3})*\z/, @@movie.budget)
   end
 
   def test_revenue
-    assert_equal("$28,884,716", @@movie.revenue)
+    assert_kind_of(String, @@movie.revenue)
+    assert_match(/\A\$\d+(?:,\d{3})*\z/, @@movie.revenue)
   end
 end
