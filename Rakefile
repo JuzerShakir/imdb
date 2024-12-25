@@ -31,6 +31,13 @@ Rake::TestTask.new(:test_episode) do |t|
   t.warning = false
 end
 
+# bundle exec rake test_game
+desc "Run unit tests for Video Game"
+Rake::TestTask.new(:test_game) do |t|
+  t.pattern = "test/titles/video_game_test.rb"
+  t.warning = false
+end
+
 desc "linting & code smell detector"
 task :analysis do
   sh "standardrb"
