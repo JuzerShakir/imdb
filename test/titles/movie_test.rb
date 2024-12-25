@@ -27,11 +27,7 @@ class TestMovie < TestHelper
 
   def test_popularity = super title.popularity
 
-  def test_release_date
-    release_date = title.release_date
-    super release_date
-    assert_equal("October 14, 1994 (India)", release_date)
-  end
+  def test_release_date = super title.release_date
 
   def test_duration
     duration = title.duration

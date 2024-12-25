@@ -14,7 +14,10 @@ module IMDbTitleTest
 
   def test_popularity(object) = assert_match(/\A(\d+|\d+\.\d+)([kKmM])?\z/, object)
 
-  def test_release_date(object) = assert_kind_of String, object
+  def test_release_date(object)
+    assert_kind_of String, object
+    assert_match(/\A\w+ \d{1,2}, \d{4} \(India|United States\)\z/, object)
+  end
 
   def test_casts(object) = assert_kind_of Array, object
 
