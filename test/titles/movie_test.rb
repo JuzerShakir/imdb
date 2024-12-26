@@ -4,7 +4,7 @@
 require_relative "../test_helper"
 
 # tests against all the methods of Movie Module
-class TestMovie < TestHelper
+class MovieTest < TestHelper
   ID = "tt0111161" # the shawshank redemption
 
   def test_imdb_id

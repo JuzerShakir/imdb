@@ -4,7 +4,7 @@
 require_relative "../test_helper"
 
 # tests against all the methods of TvShow Module
-class TestTvShow < TestHelper
+class TvShowTest < TestHelper
   ID = "tt0903747" # breaking bad
 
   def test_imdb_id

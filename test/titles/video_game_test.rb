@@ -4,7 +4,7 @@
 require_relative "../test_helper"
 
 # tests against all the methods of VideoGame Module
-class TestVideoGame < TestHelper
+class VideoGameTest < TestHelper
   ID = "tt2140553" # the last of us
 
   def test_imdb_id

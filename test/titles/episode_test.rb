@@ -4,7 +4,7 @@
 require_relative "../test_helper"
 
 # tests against all the methods of Episode Module
-class TestEpisode < TestHelper
+class EpisodeTest < TestHelper
   ID = "tt9166672" # open wide, o earth
 
   def test_imdb_id

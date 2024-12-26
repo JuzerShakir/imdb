@@ -4,7 +4,7 @@
 require_relative "../test_helper"
 
 # tests against all the methods of VideoGame Module
-class TestTitleInDevelopment < TestHelper
+class TitleInDevelopmentTest < TestHelper
   ID = "tt4576032" # blade
 
   def test_imdb_id
