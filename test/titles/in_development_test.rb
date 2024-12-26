@@ -24,8 +24,6 @@ class TitleInDevelopmentTest < TestHelper
     assert(tagline.is_a?(String) || tagline.nil?)
   end
 
-  def test_genres = super title.genres
-
   def test_ratings
     assert_nil(title.ratings)
   end
@@ -37,10 +35,6 @@ class TitleInDevelopmentTest < TestHelper
   def test_release_date
     assert_nil(title.release_date)
   end
-
-  def test_casts = super title.casts
-
-  def test_directors = super title.directors
 
   def test_production_companies = super title.production_companies
 end

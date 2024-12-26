@@ -14,7 +14,15 @@ class TestHelper < Minitest::Test
 
   def self.inherited(subclass)
     super
-    subclass.class_eval { include IMDbTitleTest }
+    subclass.class_eval do
+      include IMDbTitleTest
+
+      IMDbTitleTest.instance_methods(false).each do |method|
+        define_method method do
+          super(title.send(method.to_s.sub("test_", "").to_sym))
+        end
+      end
+    end
   end
 
   before(:all) do

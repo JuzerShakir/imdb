@@ -19,27 +19,11 @@ class TvShowTest < TestHelper
     assert_equal("Breaking Bad", heading)
   end
 
-  def test_tagline = super title.tagline
-
-  def test_genres = super title.genres
-
-  def test_ratings = super title.ratings
-
-  def test_popularity = super title.popularity
-
-  def test_release_date = super title.release_date
-
   def test_duration
     duration = title.duration
     assert_kind_of String, duration
     assert_equal("45 minutes", duration)
   end
-
-  def test_casts = super title.casts
-
-  def test_directors = super title.directors
-
-  def test_production_companies = super title.production_companies
 
   def test_instance_of_class
     assert_kind_of(TvShow, title)
