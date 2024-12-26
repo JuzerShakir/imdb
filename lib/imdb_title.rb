@@ -31,18 +31,13 @@ module IMDb
 
     # lists all top cast (Array)
     def casts
-      html = document.css("a[data-testid=title-cast-item__actor]")
-      return if html.empty?
-
-      html.map(&:text)
+      document.css("a[data-testid=title-cast-item__actor]").map(&:text) || []
     end
 
     # list of directors (Array)
     def directors
-      html = document.css("li[data-testid=title-pc-principal-credit]").first
-      return unless html&.text&.match?(/Director|Creator/)
-
-      html.css("div li").map(&:text)
+      element = document.css("li[data-testid=title-pc-principal-credit]").first
+      element&.text&.match?(/Director|Creator/) ? element.css("div li").map(&:text) : []
     end
 
     # list of genres (Array)
