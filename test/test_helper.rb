@@ -17,7 +17,7 @@ class TestHelper < Minitest::Test
     super
     subclass.class_eval do
       include IMDbTitleTest
-      include NonInteractiveTest if name =~ /^(Movie|TvShow|Episode)/
+      include NonInteractiveTest if name.match?(/^(Movie|TvShow|Episode)/)
 
       IMDbTitleTest.instance_methods(false).each do |method|
         define_method method do

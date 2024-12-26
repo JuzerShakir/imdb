@@ -4,3 +4,6 @@
 detectors:
   NilCheck:
     enabled: false
+  TooManyStatements:
+    enabled: true
+    max_statements: 7
