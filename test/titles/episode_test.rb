@@ -17,7 +17,5 @@ class EpisodeTest < TestHelper
 
   def test_duration = super title.duration, "1 hour 5 minutes"
 
-  def test_instance_of_class
-    assert_kind_of(Episode, title)
-  end
+  def test_instance_of_class = assert_kind_of(Episode, title)
 end

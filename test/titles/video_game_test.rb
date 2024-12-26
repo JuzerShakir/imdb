@@ -17,7 +17,5 @@ class VideoGameTest < TestHelper
 
   def test_duration = assert_raises(NoMethodError) { title.duration }
 
-  def test_instance_of_class
-    assert_kind_of(VideoGame, title)
-  end
+  def test_instance_of_class = assert_kind_of(VideoGame, title)
 end
