@@ -24,10 +24,7 @@ class TestTitleInDevelopment < TestHelper
     assert(tagline.is_a?(String) || tagline.nil?)
   end
 
-  def test_genres
-    genres = title.genres
-    assert(genres.is_a?(Array) || genres.nil?)
-  end
+  def test_genres = super title.genres
 
   def test_ratings
     assert_nil(title.ratings)
@@ -45,8 +42,5 @@ class TestTitleInDevelopment < TestHelper
 
   def test_directors = super title.directors
 
-  def test_production_companies
-    production_companies = title.production_companies
-    assert(production_companies.is_a?(Array) || production_companies.nil?)
-  end
+  def test_production_companies = super title.production_companies
 end

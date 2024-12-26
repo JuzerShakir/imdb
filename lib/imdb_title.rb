@@ -42,7 +42,7 @@ module IMDb
 
     # list of genres (Array)
     def genres
-      document.css("div[data-testid=interests] div a").map(&:text)
+      document.css("div[data-testid=interests] div a").map(&:text) || []
     end
 
     # ID that differentiates each media type on imdb.com (String)
@@ -57,7 +57,7 @@ module IMDb
 
     # list of production companies (Array)
     def production_companies
-      document.css("li[data-testid=title-details-companies] li").map(&:text)
+      document.css("li[data-testid=title-details-companies] li").map(&:text) || []
     end
 
     # average ratings (String)
