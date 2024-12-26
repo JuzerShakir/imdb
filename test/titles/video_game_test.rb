@@ -19,9 +19,7 @@ class VideoGameTest < TestHelper
     assert_equal("June 14, 2013 (United States)", release_date)
   end
 
-  def test_duration
-    assert_raises(NoMethodError) { title.duration }
-  end
+  def test_duration = assert_raises(NoMethodError) { title.duration }
 
   def test_instance_of_class
     assert_kind_of(VideoGame, title)

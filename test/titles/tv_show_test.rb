@@ -13,11 +13,7 @@ class TvShowTest < TestHelper
     assert_equal("Breaking Bad", heading)
   end
 
-  def test_duration
-    duration = title.duration
-    assert_kind_of String, duration
-    assert_equal("45 minutes", duration)
-  end
+  def test_duration = super title.duration, "45 minutes"
 
   def test_instance_of_class
     assert_kind_of(TvShow, title)

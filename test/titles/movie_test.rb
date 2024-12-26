@@ -15,11 +15,7 @@ class MovieTest < TestHelper
     assert_equal("The Shawshank Redemption", heading)
   end
 
-  def test_duration
-    duration = title.duration
-    assert_kind_of String, duration
-    assert_equal("2 hours 22 minutes", duration)
-  end
+  def test_duration = super title.duration, "2 hours 22 minutes"
 
   def test_budget
     budget = title.budget
