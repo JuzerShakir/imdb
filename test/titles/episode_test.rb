@@ -7,11 +7,7 @@ require_relative "../test_helper"
 class EpisodeTest < TestHelper
   ID = "tt9166672" # open wide, o earth
 
-  def test_title
-    heading = title.title
-    super heading
-    assert_equal("Open Wide, O Earth", heading)
-  end
+  def test_title = super title.title, "Open Wide, O Earth"
 
   def test_release_date
     release_date = title.release_date

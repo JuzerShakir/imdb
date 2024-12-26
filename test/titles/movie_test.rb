@@ -9,11 +9,7 @@ class MovieTest < TestHelper
 
   def test_instance_of_class = assert_kind_of(Movie, title)
 
-  def test_title
-    heading = title.title
-    super heading
-    assert_equal("The Shawshank Redemption", heading)
-  end
+  def test_title = super title.title, "The Shawshank Redemption"
 
   def test_duration = super title.duration, "2 hours 22 minutes"
 

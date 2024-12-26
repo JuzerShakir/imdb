@@ -7,7 +7,10 @@ module IMDbTitleTest
     assert_equal(self.class::ID, object)
   end
 
-  def test_title(object) = assert_kind_of String, object
+  def test_title(object, expected_heading)
+    assert_kind_of String, object
+    assert_equal(object, expected_heading)
+  end
 
   def test_tagline(object) = assert_kind_of String, object
 

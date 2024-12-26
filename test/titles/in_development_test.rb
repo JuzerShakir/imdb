@@ -7,11 +7,7 @@ require_relative "../test_helper"
 class TitleInDevelopmentTest < TestHelper
   ID = "tt4576032" # blade
 
-  def test_title
-    heading = title.title
-    super heading
-    assert_equal("300: The Resurgence", heading)
-  end
+  def test_title = super title.title, "300: The Resurgence"
 
   def test_tagline
     tagline = title.tagline
