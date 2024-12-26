@@ -3,7 +3,7 @@
 # load all dependencies
 require_relative "helper"
 
-###### ---------------- List of features/data avialable to extract -----------------------
+###### ---------------- List of features/data available to extract -----------------------
 ###   1. Cast
 ###   2. Director
 ###   3. Genres
@@ -12,7 +12,7 @@ require_relative "helper"
 ###   6. Ratings
 ###   7. Title
 ###   8. Tagline
-###   9. Prodcution Companies
+###   9. Production Companies
 ###   10. Release Date
 
 module IMDb
@@ -31,23 +31,18 @@ module IMDb
 
     # lists all top cast (Array)
     def casts
-      html = document.css("a[data-testid=title-cast-item__actor]")
-      return if html.empty?
-
-      html.map(&:text)
+      document.css("a[data-testid=title-cast-item__actor]").map(&:text) || []
     end
 
     # list of directors (Array)
     def directors
-      html = document.css("li[data-testid=title-pc-principal-credit]").first
-      return unless html.text.match?(/Director|Creator/)
-
-      html.css("div li").map(&:text)
+      element = document.css("li[data-testid=title-pc-principal-credit]").first
+      element&.text&.match?(/Director|Creator/) ? element.css("div li").map(&:text) : []
     end
 
     # list of genres (Array)
     def genres
-      document.css("div[data-testid=genres] div a").map(&:text)
+      document.css("div[data-testid=interests] div a").map(&:text) || []
     end
 
     # ID that differentiates each media type on imdb.com (String)
@@ -62,7 +57,7 @@ module IMDb
 
     # list of production companies (Array)
     def production_companies
-      document.css("li[data-testid=title-details-companies] li").map(&:text)
+      document.css("li[data-testid=title-details-companies] li").map(&:text) || []
     end
 
     # average ratings (String)

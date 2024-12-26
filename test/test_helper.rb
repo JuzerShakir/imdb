@@ -1,41 +1,33 @@
 # frozen_string_literal: true
 
 require "minitest/autorun"
+require "minitest/hooks"
 require_relative "../lib/imdb_title"
+require_relative "imdb_title_test"
+require_relative "non_interactive_test"
+require "debug"
 
-module LoadMedia
-  class << self
-    def all
-      [episode, game, in_development, movie, tv]
-    end
+# This helper class loads all the modules and methods required for the tests
+class TestHelper < Minitest::Test
+  attr_reader :title
 
-    def episode
-      open_wide = "https://www.imdb.com/title/tt9166672"
-      IMDb::Title.new(open_wide)
-    end
+  include Minitest::Hooks
 
-    def game
-      the_last_of_us = "https://www.imdb.com/title/tt2140553"
-      IMDb::Title.new(the_last_of_us)
-    end
+  def self.inherited(subclass)
+    super
+    subclass.class_eval do
+      include IMDbTitleTest
+      include NonInteractiveTest if name.match?(/^(Movie|TvShow|Episode)/)
 
-    def in_development
-      justice_league = "https://www.imdb.com/title/tt4121026"
-      IMDb::Title.new(justice_league)
+      IMDbTitleTest.instance_methods(false).each do |method|
+        define_method method do
+          super(title.send(method.to_s.sub("test_", "").to_sym))
+        end
+      end
     end
+  end
 
-    def movie
-      shawshank_redemption = "https://www.imdb.com/title/tt0111161/"
-      IMDb::Title.new(shawshank_redemption)
-    end
-
-    def non_interactive
-      [episode, movie, tv]
-    end
-
-    def tv
-      breaking_bad = "https://www.imdb.com/title/tt0903747"
-      IMDb::Title.new(breaking_bad)
-    end
+  before(:all) do
+    @title = IMDb::Title.new "https://www.imdb.com/title/#{self.class::ID}"
   end
 end

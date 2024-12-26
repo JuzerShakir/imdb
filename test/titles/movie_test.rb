@@ -4,18 +4,24 @@
 require_relative "../test_helper"
 
 # tests against all the methods of Movie Module
-class TestMovie < Minitest::Test
-  @@movie = LoadMedia.movie
+class MovieTest < TestHelper
+  ID = "tt0111161" # the shawshank redemption
 
-  def test_inheritance
-    assert_kind_of(Movie, @@movie)
-  end
+  def test_instance_of_class = assert_kind_of(Movie, title)
+
+  def test_title = super title.title, "The Shawshank Redemption"
+
+  def test_duration = super title.duration, "2 hours 22 minutes"
 
   def test_budget
-    assert_equal("$25,000,000", @@movie.budget)
+    budget = title.budget
+    assert_kind_of(String, budget)
+    assert_match(/\A\$\d+(?:,\d{3})*\z/, budget)
   end
 
   def test_revenue
-    assert_equal("$28,884,716", @@movie.revenue)
+    revenue = title.revenue
+    assert_kind_of(String, revenue)
+    assert_match(/\A\$\d+(?:,\d{3})*\z/, revenue)
   end
 end

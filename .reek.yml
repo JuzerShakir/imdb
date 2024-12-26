@@ -2,17 +2,8 @@
 ### Generic smell configuration
 
 detectors:
-  FeatureEnvy:
-    exclude:
-      - "IMDb::Title#casts"
-      - "IMDb::Title#directors"
-  DuplicateMethodCall:
-    exclude:
-      - "Exceptions#test_invalid_url"
+  NilCheck:
+    enabled: false
   TooManyStatements:
-    max_statements: 10
-
-directories:
-  "test":
-    ClassVariable:
-      enabled: false
+    enabled: true
+    max_statements: 7
