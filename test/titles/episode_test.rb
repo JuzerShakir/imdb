@@ -7,12 +7,6 @@ require_relative "../test_helper"
 class EpisodeTest < TestHelper
   ID = "tt9166672" # open wide, o earth
 
-  def test_imdb_id
-    id = title.imdb_id
-    super id
-    assert_equal(ID, id)
-  end
-
   def test_title
     heading = title.title
     super heading

@@ -9,12 +9,6 @@ class MovieTest < TestHelper
 
   def test_instance_of_class = assert_kind_of(Movie, title)
 
-  def test_imdb_id
-    id = title.imdb_id
-    super id
-    assert_equal(ID, id)
-  end
-
   def test_title
     heading = title.title
     super heading

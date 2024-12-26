@@ -7,12 +7,6 @@ require_relative "../test_helper"
 class VideoGameTest < TestHelper
   ID = "tt2140553" # the last of us
 
-  def test_imdb_id
-    id = title.imdb_id
-    super id
-    assert_equal(ID, id)
-  end
-
   def test_title
     heading = title.title
     super heading

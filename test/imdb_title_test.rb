@@ -2,7 +2,10 @@
 
 # This is the base class where common assertions in common methods are defined
 module IMDbTitleTest
-  def test_imdb_id(object) = assert_kind_of String, object
+  def test_imdb_id(object)
+    assert_kind_of String, object
+    assert_equal(self.class::ID, object)
+  end
 
   def test_title(object) = assert_kind_of String, object
 
