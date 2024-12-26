@@ -41,15 +41,9 @@ class TestTitleInDevelopment < TestHelper
     assert_nil(title.release_date)
   end
 
-  def test_casts
-    casts = title.casts
-    assert(casts.is_a?(Array) || casts.nil?)
-  end
+  def test_casts = super title.casts
 
-  def test_directors
-    directors = title.directors
-    assert(directors.is_a?(Array) || directors.nil?)
-  end
+  def test_directors = super title.directors
 
   def test_production_companies
     production_companies = title.production_companies
