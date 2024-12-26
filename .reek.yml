@@ -4,7 +4,3 @@
 detectors:
   NilCheck:
     enabled: false
-  FeatureEnvy:
-    exclude:
-      - "IMDb::Title#casts"
-      - "IMDb::Title#directors"
