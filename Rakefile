@@ -47,6 +47,6 @@ end
 
 desc "linting & code smell detector"
 task :analysis do
-  sh "standardrb"
+  sh "rubocop"
   sh "reek"
 end
