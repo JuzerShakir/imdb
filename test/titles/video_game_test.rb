@@ -7,11 +7,12 @@ require_relative "../test_helper"
 class VideoGameTest < TestHelper
   ID = "tt2140553" # the last of us
 
-  def test_title = super title.title, "The Last of Us"
+  def test_title = super(title.title, "The Last of Us")
 
   def test_release_date
     release_date = title.release_date
-    super release_date
+    super(release_date)
+
     assert_equal("June 14, 2013 (United States)", release_date)
   end
 

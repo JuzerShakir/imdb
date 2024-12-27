@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
     "source_code_uri" => "https://github.com/JuzerShakir/imdb",
     "changelog_uri" => "https://github.com/JuzerShakir/imdb/blob/master/CHANGELOG.md",
     "bug_tracker_uri" => "https://github.com/JuzerShakir/imdb/issues",
-    'rubygems_mfa_required' => 'true'
+    "rubygems_mfa_required" => "true"
   }
   s.add_dependency "httparty", "~> 0.21.0"
   s.add_dependency "nokogiri", "~> 1.15", ">= 1.15.4"
