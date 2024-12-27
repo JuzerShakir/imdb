@@ -4,13 +4,13 @@
 require "debug"
 require "minitest/autorun"
 require "minitest/hooks"
-require 'require_all'
+require "require_all"
 
 require_rel %w[
-    ../lib/imdb_title
-    support
-    imdb_title_test
-    non_interactive_test
+  ../lib/imdb_title
+  support
+  imdb_title_test
+  non_interactive_test
 ].freeze
 
 # This helper class loads all the modules and methods required for the tests
