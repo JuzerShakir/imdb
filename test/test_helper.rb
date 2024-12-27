@@ -34,6 +34,8 @@ class TestHelper < Minitest::Test
   end
 
   before(:all) do
-    @title = IMDb::Title.new "https://www.imdb.com/title/#{self.class::ID}"
+    id = self.class::ID
+
+    VCR.use_cassette(id) { @title = IMDb::Title.new "https://www.imdb.com/title/#{id}" }
   end
 end
