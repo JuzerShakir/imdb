@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
     "bug_tracker_uri" => "https://github.com/JuzerShakir/imdb/issues",
     'rubygems_mfa_required' => 'true'
   }
-  s.add_runtime_dependency "httparty", "~> 0.21.0"
-  s.add_runtime_dependency "nokogiri", "~> 1.15", ">= 1.15.4"
+  s.add_dependency "httparty", "~> 0.21.0"
+  s.add_dependency "nokogiri", "~> 1.15", ">= 1.15.4"
   s.required_ruby_version = ">= 3.0.0"
 end
