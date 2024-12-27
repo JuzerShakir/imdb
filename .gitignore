@@ -1,2 +1,3 @@
 imdb_title-*.gem
 test.rb
+test/fixtures/vcr_cassettes
