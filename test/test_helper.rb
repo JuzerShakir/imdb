@@ -6,9 +6,12 @@ require "minitest/autorun"
 require "minitest/hooks"
 require 'require_all'
 
-require_relative "../lib/imdb_title"
-require_relative "imdb_title_test"
-require_relative "non_interactive_test"
+require_rel %w[
+    ../lib/imdb_title
+    support
+    imdb_title_test
+    non_interactive_test
+].freeze
 
 # This helper class loads all the modules and methods required for the tests
 class TestHelper < Minitest::Test
