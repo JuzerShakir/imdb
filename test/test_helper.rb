@@ -1,11 +1,17 @@
 # frozen_string_literal: true
 
+# load external libraries
+require "debug"
 require "minitest/autorun"
 require "minitest/hooks"
-require_relative "../lib/imdb_title"
-require_relative "imdb_title_test"
-require_relative "non_interactive_test"
-require "debug"
+require "require_all"
+
+require_rel %w[
+  ../lib/imdb_title
+  support
+  imdb_title_test
+  non_interactive_test
+].freeze
 
 # This helper class loads all the modules and methods required for the tests
 class TestHelper < Minitest::Test
@@ -28,6 +34,8 @@ class TestHelper < Minitest::Test
   end
 
   before(:all) do
-    @title = IMDb::Title.new "https://www.imdb.com/title/#{self.class::ID}"
+    id = self.class::ID
+
+    VCR.use_cassette(id) { @title = IMDb::Title.new "https://www.imdb.com/title/#{id}" }
   end
 end
