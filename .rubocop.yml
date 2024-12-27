@@ -12,6 +12,9 @@ AllCops:
   Exclude:
     - "test.rb"
 
+require:
+  - rubocop-minitest
+
 StringLiterals:
   Enabled: false
 
