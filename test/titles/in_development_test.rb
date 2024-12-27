@@ -7,10 +7,11 @@ require_relative "../test_helper"
 class TitleInDevelopmentTest < TestHelper
   ID = "tt4576032" # blade
 
-  def test_title = super title.title, "300: The Resurgence"
+  def test_title = super(title.title, "300: The Resurgence")
 
   def test_tagline
     tagline = title.tagline
+
     assert(tagline.is_a?(String) || tagline.nil?)
   end
 
@@ -20,5 +21,5 @@ class TitleInDevelopmentTest < TestHelper
 
   def test_release_date = assert_nil(title.release_date)
 
-  def test_production_companies = super title.production_companies
+  def test_production_companies = super(title.production_companies)
 end

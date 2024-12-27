@@ -6,14 +6,16 @@
 # guidelines for contributions.
 #
 # Any of these may be changed.
+require:
+  - rubocop-minitest
+  - rubocop-rake
+  - standard
+
+inherit_gem:
+  standard: config/base.yml
+
 AllCops:
-  TargetRubyVersion: "3.2.2"
-
-StringLiterals:
-  Enabled: false
-
-SpaceInsideHashLiteralBraces:
-  Enabled: false
-
-Style/ClassVars:
-  Enabled: false
+  TargetRubyVersion: 3.2.2
+  NewCops: enable
+  Exclude:
+    - "test.rb"
