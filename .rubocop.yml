@@ -8,6 +8,7 @@
 # Any of these may be changed.
 AllCops:
   TargetRubyVersion: "3.0.0"
+  NewCops: enable
 
 StringLiterals:
   Enabled: false
