@@ -11,5 +11,5 @@
 
 # features exclusive to Tv-Show media type
 module TvShow
-  prepend NonInteractive
+  include NonInteractive
 end

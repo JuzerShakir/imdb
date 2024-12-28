@@ -11,5 +11,5 @@
 
 # features exclusive to Episode media type
 module Episode
-  prepend NonInteractive
+  include NonInteractive
 end
