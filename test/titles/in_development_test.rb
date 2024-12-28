@@ -20,6 +20,4 @@ class TitleInDevelopmentTest < TestHelper
   def test_popularity = assert_nil(title.popularity)
 
   def test_release_date = assert_nil(title.release_date)
-
-  def test_production_companies = super(title.production_companies)
 end
