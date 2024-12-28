@@ -1,5 +1,22 @@
 # Changelog
 
+## [v0.1.0](https://github.com/JuzerShakir/imdb/tree/v0.0.14) (2024-12-28)
+
+First Minor Upgrade 🥳
+
+This version includes following changes:
+
+- Update Unit Tests & Add new rake tasks for testing individual titles in [#3](https://github.com/JuzerShakir/imdb/pull/3)
+- Record HTTP interactions with VCR in [#4](https://github.com/JuzerShakir/imdb/pull/4)
+- Modify Linting Configuration in [#5](https://github.com/JuzerShakir/imdb/pull/5)
+- Upgrade dependencies in [#6](https://github.com/JuzerShakir/imdb/pull/6)
+- Update Inheritance in [#7](https://github.com/JuzerShakir/imdb/pull/7)
+- Update Documentation in [#8](https://github.com/JuzerShakir/imdb/pull/8)
+
+**Full Changelog**: [v0.0.13...v0.1.0](https://github.com/JuzerShakir/imdb/compare/v0.0.13...v0.1.0)
+
+---
+
 ## [v0.0.13](https://github.com/JuzerShakir/imdb/tree/v0.0.13) (2023-10-08)
 
 A new patch release! 🎉
