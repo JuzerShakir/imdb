@@ -14,7 +14,7 @@
 
 # features exclusive to Movie media type
 module Movie
-  prepend NonInteractive
+  include NonInteractive
 
   # budget (String)
   def budget
