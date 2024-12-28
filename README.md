@@ -32,7 +32,15 @@ gem 'imdb_title'
 
 Then run `bundle install`.
 
+or run this command in your console to install gem locally:
+
+```ruby
+gem install imdb_title
+```
+
 ## Usage
+
+### Here's an example
 
 ```ruby
 require 'imdb_title'
@@ -41,31 +49,80 @@ require 'imdb_title'
 movie = IMDb::Title.new("https://www.imdb.com/title/tt0111161")
 
 movie.title                 #=> The Shawshank Redemption
-movie.budget                #=> $25,000,000
-movie.casts.first(2)        #=> ["Tim Robbins", "Morgan Freeman"]
-movie.directors             #=> ["Frank Darabont"]
-movie.duration              #=> 2 hours 22 minutes
-movie.genres                #=> ["Drama"]
-movie.imdb_id               #=> tt0111161
-movie.popularity            #=> 2.8M
-movie.production_companies  #=> ["Castle Rock Entertainment"]
-movie.ratings               #=> 9.3
-movie.release_date          #=> October 14, 1994 (India)
-movie.revenue               #=> $28,884,716
 movie.tagline               #=> Over the course of several years, two convicts...
+movie.genres                #=> ["Drama"]
+movie.revenue               #=> $28,884,716
 
+movie.ancestors           #=> [IMDb::Title, Object, PP::ObjectMixin, ...]
+movie.singleton_class.ancestors            #=> <Class:#<IMDb::Title:0x00007f4a0bf22a40>>, Movie, NonInteractive, IMDb::Title, Object, PP::ObjectMixin, ...]
 ```
 
-These will return an `array` type:
+---
 
-1. `casts`
-2. `production_companies`
-3. `directors`
-4. `genres`
+### Available Methods
 
-All other methods will return `string` type.
+<details>
+  <summary>
+    <b>ALL title types</b>
+  </summary>
+  <ol>
+    <li>title</li>
+    <li>tagline</li>
+    <li>genres</li>
+    <li>ratings</li>
+    <li>popularity</li>
+    <li>directors</li>
+    <li>production_companies</li>
+    <li>casts</li>
+    <li>release_date</li>
+    <li>imdb_id</li>
+    <li>url</li>
+  </ol>
+</details>
 
-> If any of the following features are not available or mentioned on IMDb for that particular title then it will return `nil`.
+<br>
+
+<details>
+  <summary>
+    <b>ALL title types EXCEPT Game</b>
+  </summary>
+  <ol>
+    <li>duration</li>
+  </ol>
+</details>
+
+<br>
+
+<details>
+  <summary>
+    <b>ONLY for Movie title</b>
+  </summary>
+  <ol>
+    <li>budget</li>
+    <li>revenue</li>
+  </ol>
+</details>
+
+---
+
+### Return Types
+
+<details>
+  <summary>
+    <b>Array types:</b>
+  </summary>
+  <ol>
+    <li>casts</li>
+    <li>genres</li>
+    <li>directors</li>
+    <li>production_companies</li>
+
+  </ol>
+</details>
+
+<br>
+
+> All other methods will return `string` type.
 
 ## Contributing
 
@@ -79,7 +136,7 @@ Thank you, contributors!
 
 ## Versioning
 
-ImdbTitle follows Semantic Versioning 2.0 as defined at https://semver.org.
+ImdbTitle follows Semantic Versioning 2.0 as defined at <https://semver.org>.
 
 ## License
 
