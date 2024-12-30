@@ -8,7 +8,7 @@ We welcome contributions from the community! Here's how you can get involved:
 
 2. Create a new branch for your feature or bug fix. Make sure to create a meaningful branch name:
 
-   ```git
+   ```bash
    git checkout -b <branch-name>
    ```
 
@@ -42,9 +42,8 @@ We welcome contributions from the community! Here's how you can get involved:
 
 8. Create a Pull Request
 
-   - Create a pull request on this repository, targeting the main or development branch.
+   - Create a pull request on this repository, targeting the `master` branch.
    - Provide a clear description of your changes and the problem they solve.
-   - Address any feedback or requested changes from reviewers.
 
 Thank you, contributors!
 
