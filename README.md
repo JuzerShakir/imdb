@@ -48,13 +48,13 @@ require 'imdb_title'
 # input a valid URL of any Movie, Tv-Show, Episode or Game from imdb.com
 movie = IMDb::Title.new("https://www.imdb.com/title/tt0111161")
 
-movie.title                 #=> The Shawshank Redemption
-movie.tagline               #=> Over the course of several years, two convicts...
-movie.genres                #=> ["Drama"]
-movie.revenue               #=> $28,884,716
+movie.title           #=> The Shawshank Redemption
+movie.tagline      #=> Over the course of several years, two convicts...
+movie.genres      #=> ["Drama"]
+movie.revenue    #=> $28,884,716
 
-movie.ancestors           #=> [IMDb::Title, Object, PP::ObjectMixin, ...]
-movie.singleton_class.ancestors            #=> <Class:#<IMDb::Title:0x00007f4a0bf22a40>>, Movie, NonInteractive, IMDb::Title, Object, PP::ObjectMixin, ...]
+movie.ancestors    #=> [IMDb::Title, Object, PP::ObjectMixin, ...]
+movie.singleton_class.ancestors    #=> <Class:#<IMDb::Title:0x00007f4a0bf22a40>>, Movie, NonInteractive, IMDb::Title, Object, PP::ObjectMixin, ...]
 ```
 
 ---
@@ -63,7 +63,7 @@ movie.singleton_class.ancestors            #=> <Class:#<IMDb::Title:0x00007f4a0b
 
 <details>
   <summary>
-    <b>ALL title types</b>
+    <b>For ALL titles</b>
   </summary>
   <ol>
     <li>title</li>
@@ -84,7 +84,7 @@ movie.singleton_class.ancestors            #=> <Class:#<IMDb::Title:0x00007f4a0b
 
 <details>
   <summary>
-    <b>ALL title types EXCEPT Game</b>
+    <b>For ALL titles EXCEPT Game</b>
   </summary>
   <ol>
     <li>duration</li>
@@ -95,7 +95,7 @@ movie.singleton_class.ancestors            #=> <Class:#<IMDb::Title:0x00007f4a0b
 
 <details>
   <summary>
-    <b>ONLY for Movie title</b>
+    <b>Exculsive to Movie</b>
   </summary>
   <ol>
     <li>budget</li>
@@ -105,18 +105,17 @@ movie.singleton_class.ancestors            #=> <Class:#<IMDb::Title:0x00007f4a0b
 
 ---
 
-### Return Types
+### Methods that return
 
 <details>
   <summary>
-    <b>Array types:</b>
+    <b>Array</b>
   </summary>
   <ol>
     <li>casts</li>
     <li>genres</li>
     <li>directors</li>
     <li>production_companies</li>
-
   </ol>
 </details>
 
